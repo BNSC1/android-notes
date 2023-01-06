@@ -1,4 +1,4 @@
-#Android Components & Architecture
+# Android Components & Architecture
 
 Activity - entry point for user interaction e.g. track what is on the screen
 
@@ -18,7 +18,7 @@ Sticky Intent: still exists after broadcasting, allowing other components to col
 
 AndroidManifest.xml - declare existing components, API level, required permissions, required hardware features
 
-<intent-filter> - specifies the types of intents components can respond to
+`<intent-filter>` - specifies the types of intents components can respond to
 
 
 Module - a collection of source files and build settings to divide project for discrete functionality
@@ -42,13 +42,20 @@ Application - contains all other components such as activities and services.
 Fragment - has its layout and its behaviour with its lifecycle callbacks, can add or remove fragments in the activity, can combine multiple fragments in an activity, can be reused in multiple activities, life cycle is closely related to the lifecycle of its host activity
 
 launchMode -
+
 <sup>
 standard - default, will create a new activity regardless if it is in the task stack
+</sup>
 
+<sup>
 singleTop - if the target activity is already on top, use it, otherwise create new one
+</sup>
 
+<sup>
 singleTask - if the target activity is already in the task stack, use it and pop activities above it, otherwise create new one
+</sup>
 
+<sup>
 singleInstance - create a new activity in a new task
 </sup>
 Fragment replace - removes existing fragment and adds new fragment
@@ -72,13 +79,17 @@ Mipmap folder - for launcher icon
 When the user hits the system Back button, going from B back to A, the reverse happens: the entering destination A will have the popEnterAnim applied to it and the exiting destination B will have the popExitAnim applied to it.
 
 MVC - +streamlines code -poor scalability -difficult unit-testing =view is not aware of controller, model is exposed to view
+
 <sup>
 controller: user directly interacts with controller
 </sup>
+
 MVP - +easy unit-testing +view/presenter reusable +observer not required -additional view interface -coupled view/presenter =view has reference to presenter
+
 <sup>
 presenter: communicates with view via the interface
 </sup>
+
 MVVM - +no coupled view/viewmodel +easy unit-testing -observe for each UI component -obsessive code -requires observer =view has reference to vm but vm is not aware of view so vm can be used in multiple views
 
 AIDL: handles how the client and the service interacts
@@ -107,13 +118,21 @@ Why use RecyclerView over ListView?: ListView creates as many views as data coun
 
 RecyclerView consists of:
 
+<sup>
 Adapter: binding for dataset, aware of where each items are located in the dataset
+</sup>
 
+<sup>
 LayoutManager: positions items within the RecyclerView
+</sup>
 
+<sup>
 ItemAnimator: defaults to DefaultItemAnimator
+</sup>
 
+<sup>
 ViewHolder: draws for individual items
+</sup>
 
 Mipmaps are used for icons, every resolution of them are used in case the launcher needs to display larger icon
 
@@ -153,7 +172,7 @@ Data: contains data handling logic
 
 UI: contains UI handling logic
 
-#Development
+# Development
 
 CI: build->test->merge CD: automatically deployment
 
@@ -161,19 +180,28 @@ Scrum: iterative development, daily meeting to report and adjust process
 
 ATDD: tests are written from user's perspective "is this the result I expected?"
 
-#Lifecycle
+# Lifecycle
 
 Activity:
 <sup>
 onCreate() - init activity, only called once through the whole lifecycle
+</sup>
 
+<sup>
 onStart() - when user can see the screen
+</sup>
 
+<sup>
 onResume() - when user can interact with the screen
+</sup>
 
+<sup>
 onPause() - when part of app is visible but in background
+</sup>
 
+<sup>
 onStop() - when app is not visible to user
+</sup>
 
 if onStart() finish() is called, onPause() and onStop() won't be called and will just call onDestroy()
 
@@ -182,59 +210,96 @@ setContentView() is called in onCreate() because onCreate() is only called once
 onSavedInstanceState() - store data before pausing the activity
 
 onRestoreInstanceState() - recover the saved state of an activity when the activity is recreated after destruction
-</sup>
 
 Service:
+
 <sup>
 onStartCommand(): runs when other components requests the service to start by startService()
+</sup>
 
+<sup>
 onBind(): when other Android components trying to connect with the service
+</sup>
 
+<sup>
 onCreate(): setup process when the service is created
+</sup>
 
+<sup>
 onDestroy(): service is no longer used, clean up service
 </sup>
 
 Fragment:
 <sup>
 viewLifeCycleOwner: onViewCreated~onDestroyView
+</sup>
 
+<sup>
 Fragment's LifecycleOwner: onCreate~onDestroy
+</sup>
 
+<sup>
 onCreate() - initialize a fragment, when the fragment is added to a FragmentManager
+</sup>
 
+<sup>
 onCreateView() - instantiate UI
+</sup>
 
+<sup>
 onViewCreated() - gives subclasses a chance to initialize themselves once they know their view hierarchy has been completely created
+</sup>
 
+<sup>
 onStart() - called when the fragment is visible, tied with activity's onStart()
+</sup>
 
+<sup>
 onResume() - when the fragment is interactable, tied with activity's onResume()
+</sup>
 
+<sup>
 onPause() - when the fragment is no longer interactable, tied with activity's onPause()
+</sup>
 
+<sup>
 onStop() - when the fragment is no longer visible, tied with activity's onStop()
+</sup>
 
+<sup>
 onDestroyView() - when the view onCreateView() created has been detached
+</sup>
 
+<sup>
 onDestroy() - when the fragment is no longer used, when the fragment is removed from a FragmentManager
 </sup>
 
 View:
 <sup>
 onAttachedToWindow() - when the view is attached to a window
+</sup>
 
+<sup>
 onMeasure() - determine the size of the view
+</sup>
 
+<sup>
 onLayout() - called to assign size for its children if any
+</sup>
 
+<sup>
 onDraw() - called when the view needs to render content
+</sup>
 
+<sup>
 invalidate() - rerun from draw() process
+</sup>
 
+<sup>
 requestLayout() - rerun from measure() process
 </sup>
-#Kotlin/Java
+
+# Kotlin/Java
 
 inline function: inlined functions will not be actual functions in bytecode, instead the piece of code is part of function used inline function, will not be able to access private members/methods of your enclosing class. You will need to make those members/methods internal and then annotate them with @PublishedApi. Will be able to return from the lambda which in turn will return from the calling function.
 
@@ -317,13 +382,13 @@ label in Kotlin: used to declare which loop to break/continue in a for loop
 sealed class: forces to add remaining branches while the referenced sealed class object is in when()
 
 
-#Version Control
+# Version Control
 
 git fetch: brings my local copy of the remote repository up to date.
 
 git pull: brings the changes in the remote repository to where I keep my own code.
 
-#Design patterns
+# Design patterns
 
 Singleton: single instance wherever it is accessed
 
@@ -346,20 +411,28 @@ Strategy: interface to handle different use cases
 Observer: callback to its subscribers when value changed, used to achieve separation of concern
 
 
-#Coroutine & Flow
+# Coroutine & Flow
 
 CoroutineScope: lifecycle of this coroutine
 
 CoroutineContext: provides required execution environment to run code asynchronously, consists of below:
+
 <sup>
 CoroutineDispatcher: defines thread pools to run in.
+</sup>
 
+<sup>
 CoroutineName
+</sup>
 
+<sup>
 coroutineExceptionHandler
+</sup>
 
+<sup>
 Job
 </sup>
+
 CoroutineBuilders: helps creating coroutines, can be called in non-suspending functions
 
 job.join(): blocks the execution of rest of coroutine code before this job is finished
@@ -421,14 +494,14 @@ WhileSubscribed cancels the upstream flow when there are no collectors
 viewModelScope launches on Main dispatcher by default
 
 
-#Unit Test
+# Unit Test
 
 3A: Arrange, Act, Assert
 
 Why unit test?: identify defects early, enable code reuse, improve code readability, reduce refactor cost, quickly get feedback
 
 
-#Network
+# Network
 
 gRPC: framework for communication with Protocol Buffer
 
@@ -437,13 +510,17 @@ Channel: creates connection to the server, required by Stub creation
 Stub: calls methods defined in the proto files
 
 Unlike JSON, however, protocol buffers are more than a serialized format. They include three other major parts:
+
 <sup>
+- A contract definition language found in .proto files
+</sup>
 
-A contract definition language found in .proto files
+<sup>
+- Generated accessor-function code
+</sup>
 
-Generated accessor-function code
-
-Language-specific runtime libraries
+<sup>
+- Language-specific runtime libraries
 </sup>
 
 gRPC is a new take on an old approach known as RPC (Remote Procedure Call), a form of inter-process communication essentially used for client-server interactions. The client can request to execute a procedure on the server
@@ -454,7 +531,7 @@ Multipart is a feature in most email clients that allows you to include multiple
 REST API: there are clients and a server, clients send http request in methods GET/POST/PUT/DELETE to the server, the server responses in a standard format, usually JSON
 
 
-#Programming basics
+# Programming basics
 
 Program: executables stored in storage
 
@@ -511,15 +588,15 @@ Encapsulation: hides data from unnecessary access, exposes only necessary data/f
 Inheritance: inherit behaviors and info of the superclass
 
 
-#DB
+# DB
 
 || is string concatenate operator. Think of it as + in Java String.
 
 
-#Leetcode
+# Leetcode
 
 BFS has no backtracking, uses queue.
-	
+
 DFS uses stack.
-	
+
 Why HashMap has time complexity of O(1)?: traverses between hash string instead of elements in the map
