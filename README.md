@@ -42,6 +42,7 @@ Application - contains all other components such as activities and services.
 Fragment - has its layout and its behaviour with its lifecycle callbacks, can add or remove fragments in the activity, can combine multiple fragments in an activity, can be reused in multiple activities, life cycle is closely related to the lifecycle of its host activity
 
 launchMode -
+
 <sup>standard - default, will create a new activity regardless if it is in the task stack
 
 <sup>singleTop - if the target activity is already on top, use it, otherwise create new one
