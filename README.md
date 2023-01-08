@@ -43,21 +43,14 @@ Fragment - has its layout and its behaviour with its lifecycle callbacks, can ad
 
 launchMode -
 
-<sup>
-standard - default, will create a new activity regardless if it is in the task stack
-</sup>
+<sup>standard - default, will create a new activity regardless if it is in the task stack
 
-<sup>
-singleTop - if the target activity is already on top, use it, otherwise create new one
-</sup>
+<sup>singleTop - if the target activity is already on top, use it, otherwise create new one
 
-<sup>
-singleTask - if the target activity is already in the task stack, use it and pop activities above it, otherwise create new one
-</sup>
+<sup>singleTask - if the target activity is already in the task stack, use it and pop activities above it, otherwise create new one
 
-<sup>
-singleInstance - create a new activity in a new task
-</sup>
+<sup>singleInstance - create a new activity in a new task
+
 Fragment replace - removes existing fragment and adds new fragment
 
 Fragment add - retains existing fragment and adds new fragment
@@ -80,15 +73,11 @@ When the user hits the system Back button, going from B back to A, the reverse h
 
 MVC - +streamlines code -poor scalability -difficult unit-testing =view is not aware of controller, model is exposed to view
 
-<sup>
-controller: user directly interacts with controller
-</sup>
+<sup>controller: user directly interacts with controller
 
 MVP - +easy unit-testing +view/presenter reusable +observer not required -additional view interface -coupled view/presenter =view has reference to presenter
 
-<sup>
-presenter: communicates with view via the interface
-</sup>
+<sup>presenter: communicates with view via the interface
 
 MVVM - +no coupled view/viewmodel +easy unit-testing -observe for each UI component -obsessive code -requires observer =view has reference to vm but vm is not aware of view so vm can be used in multiple views
 
@@ -118,21 +107,13 @@ Why use RecyclerView over ListView?: ListView creates as many views as data coun
 
 RecyclerView consists of:
 
-<sup>
-Adapter: binding for dataset, aware of where each items are located in the dataset
-</sup>
+<sup>Adapter: binding for dataset, aware of where each items are located in the dataset
 
-<sup>
-LayoutManager: positions items within the RecyclerView
-</sup>
+<sup>LayoutManager: positions items within the RecyclerView
 
-<sup>
-ItemAnimator: defaults to DefaultItemAnimator
-</sup>
+<sup>ItemAnimator: defaults to DefaultItemAnimator
 
-<sup>
-ViewHolder: draws for individual items
-</sup>
+<sup>ViewHolder: draws for individual items
 
 Mipmaps are used for icons, every resolution of them are used in case the launcher needs to display larger icon
 
@@ -183,25 +164,16 @@ ATDD: tests are written from user's perspective "is this the result I expected?"
 # Lifecycle
 
 Activity:
-<sup>
-onCreate() - init activity, only called once through the whole lifecycle
-</sup>
 
-<sup>
-onStart() - when user can see the screen
-</sup>
+<sup>onCreate() - init activity, only called once through the whole lifecycle
 
-<sup>
-onResume() - when user can interact with the screen
-</sup>
+<sup>onStart() - when user can see the screen
 
-<sup>
-onPause() - when part of app is visible but in background
-</sup>
+<sup>onResume() - when user can interact with the screen
 
-<sup>
-onStop() - when app is not visible to user
-</sup>
+<sup>onPause() - when part of app is visible but in background
+
+<sup>onStop() - when app is not visible to user
 
 if onStart() finish() is called, onPause() and onStop() won't be called and will just call onDestroy()
 
@@ -213,91 +185,51 @@ onRestoreInstanceState() - recover the saved state of an activity when the activ
 
 Service:
 
-<sup>
-onStartCommand(): runs when other components requests the service to start by startService()
-</sup>
+<sup>onStartCommand(): runs when other components requests the service to start by startService()
 
-<sup>
-onBind(): when other Android components trying to connect with the service
-</sup>
+<sup>onBind(): when other Android components trying to connect with the service
 
-<sup>
-onCreate(): setup process when the service is created
-</sup>
+<sup>onCreate(): setup process when the service is created
 
-<sup>
-onDestroy(): service is no longer used, clean up service
-</sup>
+<sup>onDestroy(): service is no longer used, clean up service
 
 Fragment:
-<sup>
+
 viewLifeCycleOwner: onViewCreated~onDestroyView
-</sup>
 
-<sup>
 Fragment's LifecycleOwner: onCreate~onDestroy
-</sup>
 
-<sup>
-onCreate() - initialize a fragment, when the fragment is added to a FragmentManager
-</sup>
+<sup>onCreate() - initialize a fragment, when the fragment is added to a FragmentManager
 
-<sup>
-onCreateView() - instantiate UI
-</sup>
+<sup>onCreateView() - instantiate UI
 
-<sup>
-onViewCreated() - gives subclasses a chance to initialize themselves once they know their view hierarchy has been completely created
-</sup>
+<sup>onViewCreated() - gives subclasses a chance to initialize themselves once they know their view hierarchy has been completely created
 
-<sup>
-onStart() - called when the fragment is visible, tied with activity's onStart()
-</sup>
+<sup>onStart() - called when the fragment is visible, tied with activity's onStart()
 
-<sup>
-onResume() - when the fragment is interactable, tied with activity's onResume()
-</sup>
+<sup>onResume() - when the fragment is interactable, tied with activity's onResume()
 
-<sup>
-onPause() - when the fragment is no longer interactable, tied with activity's onPause()
-</sup>
+<sup>onPause() - when the fragment is no longer interactable, tied with activity's onPause()
 
-<sup>
-onStop() - when the fragment is no longer visible, tied with activity's onStop()
-</sup>
+<sup>onStop() - when the fragment is no longer visible, tied with activity's onStop()
 
-<sup>
-onDestroyView() - when the view onCreateView() created has been detached
-</sup>
+<sup>onDestroyView() - when the view onCreateView() created has been detached
 
-<sup>
-onDestroy() - when the fragment is no longer used, when the fragment is removed from a FragmentManager
-</sup>
+<sup>onDestroy() - when the fragment is no longer used, when the fragment is removed from a FragmentManager
 
 View:
-<sup>
-onAttachedToWindow() - when the view is attached to a window
-</sup>
 
-<sup>
-onMeasure() - determine the size of the view
-</sup>
+<sup>onAttachedToWindow() - when the view is attached to a window
 
-<sup>
-onLayout() - called to assign size for its children if any
-</sup>
+<sup>onMeasure() - determine the size of the view
 
-<sup>
-onDraw() - called when the view needs to render content
-</sup>
+<sup>onLayout() - called to assign size for its children if any
 
-<sup>
-invalidate() - rerun from draw() process
-</sup>
+<sup>onDraw() - called when the view needs to render content
 
-<sup>
-requestLayout() - rerun from measure() process
-</sup>
+<sup>invalidate() - rerun from draw() process
+
+<sup>requestLayout() - rerun from measure() process
 
 # Kotlin/Java
 
@@ -417,21 +349,13 @@ CoroutineScope: lifecycle of this coroutine
 
 CoroutineContext: provides required execution environment to run code asynchronously, consists of below:
 
-<sup>
-CoroutineDispatcher: defines thread pools to run in.
-</sup>
+<sup>CoroutineDispatcher: defines thread pools to run in.
 
-<sup>
-CoroutineName
-</sup>
+<sup>CoroutineName
 
-<sup>
-coroutineExceptionHandler
-</sup>
+<sup>coroutineExceptionHandler
 
-<sup>
-Job
-</sup>
+<sup>Job
 
 CoroutineBuilders: helps creating coroutines, can be called in non-suspending functions
 
@@ -511,17 +435,11 @@ Stub: calls methods defined in the proto files
 
 Unlike JSON, however, protocol buffers are more than a serialized format. They include three other major parts:
 
-<sup>
-- A contract definition language found in .proto files
-</sup>
+<sup>- A contract definition language found in .proto files
 
-<sup>
-- Generated accessor-function code
-</sup>
+<sup>- Generated accessor-function code
 
-<sup>
-- Language-specific runtime libraries
-</sup>
+<sup>- Language-specific runtime libraries
 
 gRPC is a new take on an old approach known as RPC (Remote Procedure Call), a form of inter-process communication essentially used for client-server interactions. The client can request to execute a procedure on the server
 as if it were a normal local procedure call thanks to the stub generated for both client and server.
