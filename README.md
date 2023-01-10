@@ -164,15 +164,17 @@ ATDD: tests are written from the user's perspective "is this the result I expect
 
 Activity:
 
-<sup>onCreate() - init activity, only called once through the whole lifecycle
+- onCreate() - init activity, only called once through the whole lifecycle
 
-<sup>onStart() - when the user can see the screen
+- onStart() - when the user can see the screen
 
-<sup>onResume() - when the user can interact with the screen
+- onResume() - when the user can interact with the screen
 
-<sup>onPause() - when part of the app is visible but in the background
+- onPause() - when part of the app is visible but in the background
 
-<sup>onStop() - when the app is not visible to the user
+- onStop() - when the app is not visible to the user
+
+- onDestroy() - activity is not longer used, clean up activity
 
 if onStart() finish() is called, onPause() and onStop() won't be called and will just call onDestroy()
 
