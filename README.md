@@ -444,6 +444,22 @@ Multipart is a feature in most email clients that allows you to include multiple
 
 REST API: there are clients and a server, clients send HTTP request in methods GET/POST/PUT/DELETE to the server, and the server responds in a standard format, usually JSON
 
+OSI Model:
+
+- Layer 7 Application Layer: resource sharing or remote file access between applications e.g. HTTP
+
+- Layer 6 Presentation Layer: translation of data e.g. encoding, data compression and encryption
+
+- Layer 5 Session Layer: managing communication sessions
+
+- Layer 4 Transport Layer: transmission of data using communication protocols e.g. TCP
+
+- Layer 3 Network Layer: packet route selection and forwarding e.g. IP
+
+- Layer 2 Data Link Layer: establishes and terminates a connection between two physically-connected nodes on a network
+
+- Layer 1 Physical Layer: transmission of bit streams over a physical medium
+
 # Programming basics
 
 Program: executables stored in the storage
@@ -468,15 +484,17 @@ Concurrent: 2 or more tasks are processed by 1 processor
 
 Parallel: a task is broken into multiple subtasks processed by multiple processors
 
-S: single purpose per class
+SOLID:
 
-O: open to extension but closed to modification
+- S: single purpose per class
 
-L: replacing a superclass with its subclass shouldn't break any functions
+- O: open to extension but closed to modification
 
-I: Depending on the interface with needed functions rather than a concrete class with many functions, do not make functions useless to the client visible to it.
+- L: replacing a superclass with its subclass shouldn't break any functions
 
-D: high-level classes shouldn't depend on low-level classes, high-level class depends on an interface to avoid changing along with low-level classes
+- I: depending on the interface with needed functions rather than a concrete class with many functions, do not make functions useless to the client visible to it.
+
+- D: high-level classes shouldn't depend on low-level classes, high-level class depends on an interface to avoid changing along with low-level classes
 
 why floating numbers are inaccurate: because they can only hold this many bits after floating points, they will never accurately present an irrational number.
 
@@ -494,11 +512,13 @@ Weak reference: referenced object does not need to stay in memory
 
 Polymorphism: passing different parameters have different behaviors
 
-Abstraction: abstracting away the implementation details of a class and only presenting a clean, easy-to-use interface via the class’s member functions
+Abstraction: exposes only what the object does e.g. abstract class and interface
 
-Encapsulation: hides data from unnecessary access, expose only necessary data/functions
+Encapsulation: hides away implementation detail e.g. private, protected
 
 Inheritance: inherit behaviors and info of the superclass
+
+Database: an organized collection of data that is stored electronically
 
 # DB
 
