@@ -160,6 +160,8 @@ Scrum: iterative development, daily meeting to report and adjust the process
 
 ATDD: tests are written from the user's perspective "is this the result I expected?"
 
+UML Diagram: is used to visualize the flow of a program [Link](https://www.smartdraw.com/uml-diagram/)
+
 # Lifecycle
 
 Activity:
