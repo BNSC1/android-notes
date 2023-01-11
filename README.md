@@ -98,6 +98,14 @@ Why use dependency injection?: easier refactoring, easier testing, easier to reu
 
 How DI works?: the service implements the interface, the client depends on the interface, the injector creates the service and injects it into the client
 
+Why use Dagger?: 
+  
+- easier dependency management
+  
+- allowing to pass mocked dependencies from the outside for easier unit testing
+  
+- easier scope management
+
 What Are Components In Dagger: They are a way of telling Dagger 2 what dependencies should be bundled together and made available to a given instance so they can be used.
 
 What Are Modules In Dagger: installed to that component to allow binding to be accessed
