@@ -515,6 +515,8 @@ Strategy: interface to handle different use cases
 
 Observer: callback to its subscribers when value changes, used to achieve separation of concern
 
+Proxy: a proxy disguises itself as the actual service, enabling it to take control of the service without the client knowing, you can also replace a proxy easily because it extends the same interface as the service does, used when the duplication of the target object is expensive e.g. database
+
 # Unit Test
 
 3A: Arrange, Act, Assert
