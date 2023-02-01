@@ -36,7 +36,8 @@ Module: a collection of source files and build settings to divide the project fo
 
     - singleInstance: create a new activity in a new task
 
-Context: context of the state of the app, get info about activity and application, access resources, preferences, room, both Activity, and Application extend Context
+Context: context of the state of the app, get info about activity and application, access resources, preferences, room, both Activity, and Application 
+Context
 
 `applicationContext`: for reference by singleton class e.g. room, datastore
 
@@ -516,7 +517,7 @@ Why is `String` immutable?: to prevent manipulation of sensitive data
 
 - Composite: The component manages Leaves uniformly
 
-- Proxy: a proxy disguises itself as the actual service, enabling it to take control of the service without the client knowing, you can also replace a proxy easily because it extends the same interface as the service does, used when the duplication of the target object is expensive e.g. database
+- Proxy: a proxy disguises itself as the actual service, enabling it to take control of the service without the client knowing, you can also replace a proxy easily because it implements the same interface as the service does, used when the duplication of the target object is expensive e.g. database
 
 ## Behavioral
 
