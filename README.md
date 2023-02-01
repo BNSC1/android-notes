@@ -300,7 +300,8 @@ SOLID:
 
 - D: high-level classes shouldn't depend on low-level classes, high-level class depends on an interface to avoid changing along with low-level classes
 
-Interface: cannot have fields, can implement multiple interfaces, functions cannot be final. Used when functions are expected on unrelated classes when no changes are expected when designing small bits of functionality, can be inherited from another interface. "What can the object do"
+Interface: cannot have fields, can implement multiple interfaces, functions cannot be final. Used when functions are expected on unrelated classes when no changes are expected when 
+ing small bits of functionality, can be inherited from another interface. "What can the object do"
 
 Abstract class: can only inherit 1 abstract class, has constructors. Used when a base class is needed, when additional features are expected, inherence does not break superclass functions "What this object is"
 
@@ -495,11 +496,9 @@ Why is `String` immutable?: to prevent manipulation of sensitive data
 
 # Design patterns
 
+## Creational
+
 Singleton: single instance wherever it is accessed
-
-Adapter: lets 2 classes work with each other without modifying their codes, done by interface conversion
-
-Facade: simple interface to hide large code base
 
 Factory: dedicate object creation to a specialized factory class/method, used when a superclass has multiple subclasses, and the client does not need to care about the used subclass
 
@@ -509,13 +508,21 @@ Prototype: clones object instead of constructing a new one, used when constructi
 
 Builder: input parameters one by one (build by steps), used to avoid instantiation of a class with many parameters, writing tests
 
-Component: The component manages Leaves uniformly
+## Structural
+
+Adapter: lets 2 classes work with each other without modifying their codes, done by interface conversion
+
+Facade: simple interface to hide large code base
+
+Composite: The component manages Leaves uniformly
+
+Proxy: a proxy disguises itself as the actual service, enabling it to take control of the service without the client knowing, you can also replace a proxy easily because it extends the same interface as the service does, used when the duplication of the target object is expensive e.g. database
+
+## Behavioral
 
 Strategy: interface to handle different use cases
 
 Observer: callback to its subscribers when value changes, used to achieve separation of concern
-
-Proxy: a proxy disguises itself as the actual service, enabling it to take control of the service without the client knowing, you can also replace a proxy easily because it extends the same interface as the service does, used when the duplication of the target object is expensive e.g. database
 
 Mediator: this pattern forces components to collaborate via the mediator, components extend the mediator interface, while the concrete mediator object holds references to all components, components are not aware of each other, used to reduce dependencies
 
