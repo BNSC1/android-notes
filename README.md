@@ -501,7 +501,7 @@ Adapter: lets 2 classes work with each other without modifying their codes, done
 
 Facade: simple interface to hide large code base
 
-Factory Method: abstract factory and class to be inherited for various subclasses, used when a superclass has multiple subclasses, and the client does not need to care about the used subclass
+Factory: dedicate object creation to a specialized factory class/method, used when a superclass has multiple subclasses, and the client does not need to care about the used subclass
 
 Abstract Factory: creates families of related objects without instantiating directly, needing super factory for related factories
 
