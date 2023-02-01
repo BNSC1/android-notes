@@ -522,6 +522,8 @@ Why is `String` immutable?: to prevent manipulation of sensitive data
 
 - Strategy: interface to handle different use cases
 
+- State: state is an extension of the strategy pattern, it allows states to manipulate the context of other state
+
 - Observer: callback to its subscribers when value changes, used to achieve separation of concern
 
 - Mediator: this pattern forces components to collaborate via the mediator, components extend the mediator interface, while the concrete mediator object holds references to all components, components are not aware of each other, used to reduce dependencies
