@@ -501,7 +501,7 @@ Why is `String` immutable?: to prevent manipulation of sensitive data
 
 - Singleton: single instance wherever it is accessed
 
-- Factory: dedicate object creation to a specialized factory class/method, used when a superclass has multiple subclasses, and the client does not need to care about the used subclass
+- Factory: dedicate the creation method to the superclass, while allowing subclasses to override the method, used when a superclass has multiple subclasses, and the client does not need to care about the used subclass
 
 - Abstract Factory: creates families of related objects without instantiating directly, needing super factory for related factories
 
