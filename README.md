@@ -498,33 +498,33 @@ Why is `String` immutable?: to prevent manipulation of sensitive data
 
 ## Creational
 
-Singleton: single instance wherever it is accessed
+- Singleton: single instance wherever it is accessed
 
-Factory: dedicate object creation to a specialized factory class/method, used when a superclass has multiple subclasses, and the client does not need to care about the used subclass
+- Factory: dedicate object creation to a specialized factory class/method, used when a superclass has multiple subclasses, and the client does not need to care about the used subclass
 
-Abstract Factory: creates families of related objects without instantiating directly, needing super factory for related factories
+- Abstract Factory: creates families of related objects without instantiating directly, needing super factory for related factories
 
-Prototype: clones object instead of constructing a new one, used when construction is time-consuming
+- Prototype: clones object instead of constructing a new one, used when construction is time-consuming
 
-Builder: input parameters one by one (build by steps), used to avoid instantiation of a class with many parameters, writing tests
+- Builder: input parameters one by one (build by steps), used to avoid instantiation of a class with many parameters, writing tests
 
 ## Structural
 
-Adapter: lets 2 classes work with each other without modifying their codes, done by interface conversion
+- Adapter: lets 2 classes work with each other without modifying their codes, done by interface conversion
 
-Facade: simple interface to hide large code base
+- Facade: simple interface to hide large code base
 
-Composite: The component manages Leaves uniformly
+- Composite: The component manages Leaves uniformly
 
-Proxy: a proxy disguises itself as the actual service, enabling it to take control of the service without the client knowing, you can also replace a proxy easily because it extends the same interface as the service does, used when the duplication of the target object is expensive e.g. database
+- Proxy: a proxy disguises itself as the actual service, enabling it to take control of the service without the client knowing, you can also replace a proxy easily because it extends the same interface as the service does, used when the duplication of the target object is expensive e.g. database
 
 ## Behavioral
 
-Strategy: interface to handle different use cases
+- Strategy: interface to handle different use cases
 
-Observer: callback to its subscribers when value changes, used to achieve separation of concern
+- Observer: callback to its subscribers when value changes, used to achieve separation of concern
 
-Mediator: this pattern forces components to collaborate via the mediator, components extend the mediator interface, while the concrete mediator object holds references to all components, components are not aware of each other, used to reduce dependencies
+- Mediator: this pattern forces components to collaborate via the mediator, components extend the mediator interface, while the concrete mediator object holds references to all components, components are not aware of each other, used to reduce dependencies
 
 # Unit Test
 
