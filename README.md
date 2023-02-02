@@ -36,7 +36,8 @@ Module: a collection of source files and build settings to divide the project fo
 
     - singleInstance: create a new activity in a new task
 
-Context: context of the state of the app, get info about activity and application, access resources, preferences, room, both Activity, and Application extend Context
+Context: context of the state of the app, get info about activity and application, access resources, preferences, room, both Activity, and Application 
+Context
 
 `applicationContext`: for reference by singleton class e.g. room, datastore
 
@@ -300,7 +301,8 @@ SOLID:
 
 - D: high-level classes shouldn't depend on low-level classes, high-level class depends on an interface to avoid changing along with low-level classes
 
-Interface: cannot have fields, can implement multiple interfaces, functions cannot be final. Used when functions are expected on unrelated classes when no changes are expected when designing small bits of functionality, can be inherited from another interface. "What can the object do"
+Interface: cannot have fields, can implement multiple interfaces, functions cannot be final. Used when functions are expected on unrelated classes when no changes are expected when 
+ing small bits of functionality, can be inherited from another interface. "What can the object do"
 
 Abstract class: can only inherit 1 abstract class, has constructors. Used when a base class is needed, when additional features are expected, inherence does not break superclass functions "What this object is"
 
@@ -495,25 +497,37 @@ Why is `String` immutable?: to prevent manipulation of sensitive data
 
 # Design patterns
 
-Singleton: single instance wherever it is accessed
+## Creational
 
-Adapter: lets 2 classes work with each other without modifying their codes, done by interface conversion
+- Singleton: single instance wherever it is accessed
 
-Facade: simple interface to hide large code base
+- Factory: dedicate the creation method to the superclass, while allowing subclasses to override the method, used when a superclass has multiple subclasses, and the client does not need to care about the used subclass
 
-Factory Method: abstract factory and class to be inherited for various subclasses, used when a superclass has multiple subclasses, and the client does not need to care about the used subclass
+- Abstract Factory: creates families of related objects without instantiating directly, needing super factory for related factories
 
-Abstract Factory: creates families of related objects without instantiating directly, needing super factory for related factories
+- Prototype: clones object instead of constructing a new one, used when construction is time-consuming
 
-Prototype: clones object instead of constructing a new one, used when construction is time-consuming
+- Builder: input parameters one by one (build by steps), used to avoid instantiation of a class with many parameters, writing tests
 
-Builder: input parameters one by one (build by steps), used to avoid instantiation of a class with many parameters, writing tests
+## Structural
 
-Component: The component manages Leaves uniformly
+- Adapter: lets 2 classes work with each other without modifying their codes, done by interface conversion
 
-Strategy: interface to handle different use cases
+- Facade: simple interface to hide large code base
 
-Observer: callback to its subscribers when value changes, used to achieve separation of concern
+- Composite: The component manages Leaves uniformly
+
+- Proxy: a proxy disguises itself as the actual service, enabling it to take control of the service without the client knowing, you can also replace a proxy easily because it implements the same interface as the service does, used when the duplication of the target object is expensive e.g. database
+
+## Behavioral
+
+- Strategy: interface to handle different use cases
+
+- State: state is an extension of the strategy pattern, it allows states to manipulate the context of other state
+
+- Observer: callback to its subscribers when value changes, used to achieve separation of concern
+
+- Mediator: this pattern forces components to collaborate via the mediator, components extend the mediator interface, while the concrete mediator object holds references to all components, components are not aware of each other, used to reduce dependencies
 
 # Unit Test
 
