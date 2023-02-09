@@ -3,14 +3,14 @@ class Main {
     fun main() {
         val travelPlan = TravelPlan("taipei")
         val transport = "railway"
-        travelPlan.setStrategy(
+        travelPlan.setStrategy( //strategy is assigned in neither the context (TravelPlan) nor the strategy object
             when (transport) {
                 "railway" -> RailwayStrategy
                 "bus" -> BusStrategy
                 else -> throw IllegalArgumentException("unknown transport")
             }
         )
-        travelPlan.runStrategy()
+        travelPlan.runStrategy() //choo choo to taipei
     }
 
     class TravelPlan(private val destination: String) {
@@ -20,7 +20,7 @@ class Main {
         }
 
         fun runStrategy() {
-            strategy.travel(destination)
+            strategy.travel(destination) //delegate executions to a strategy object
         }
     }
 
