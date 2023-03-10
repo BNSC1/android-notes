@@ -125,6 +125,14 @@ Why use clean architecture?: modularize the different functions of an applicatio
 
 - UI: contains UI handling logic
 
+Event-driven architecture:
+
+- +loosely coupled, subscriber does not need to know who sends the event
+
+- +easy to pass simple data for update
+
+- -difficult debugging, harder to trace what subscriber handles the event
+
 ## API
 
 OkHttp vs Retrofit: Have to build requests yourself in OkHttp, Retrofit is slower on update because it is based on OkHttp
