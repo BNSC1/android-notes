@@ -567,7 +567,7 @@ Multipart is a feature in most email clients that allows you to include multiple
 
 REST API: there are clients and a server, clients send HTTP request in methods GET/POST/PUT/DELETE to the server, and the server responds in a standard format, usually JSON
 
-OSI Model:
+OSI Model: Describes how each communication protocol works together to enable communication between 2 devices
 
 - Layer 7 Application Layer: resource sharing or remote file access between applications e.g. HTTP
 
@@ -622,3 +622,37 @@ BFS has no backtracking and uses a queue.
 DFS uses the stack.
 
 Why HashMap has a time complexity of O(1)?: traverses between hash strings instead of elements in the map.
+
+# System Design
+
+Steps of system designing:
+
+1. Define the problem: System design problem is usually ambiguous, so communicate with your interviewers.
+
+2. Design high-level: Start from overviewing the whole system, then go into the detail.
+
+3. Dive deep: Highlight the core components and constraints.
+
+4. Find bottlenecks: Solve scalability problem
+
+5. Summarize and answer questions: Summarize design choices and elaborate if the choices justify for the tradeoffs
+
+HTTP: Primary protocol used to transfer data between a web server and a client.
+
+HTTPS: Secured version of HTTP
+
+TCP/IP: Connects devices over the internet for data transmission.
+
+Load Balancing: Distribute workloads to multiple servers, so that the addition of server is possible.
+
+Content Delivery Networks: A network of servers that delivers content to the user based on their location, the purpose is to maintain content availability and to improve user experience (reduced latency).
+
+CAP Theorem: A principle that states a distributed database system cannot guarantee all three of the following properties simultaneously.
+
+- Consistency
+
+- Availability
+
+- Partition tolerance
+
+Caching: Store frequently accessed data in a temporary storage location to improve time spent on retrieving data.
