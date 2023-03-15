@@ -354,9 +354,9 @@ You can implement another interface inside an interface
 
 Auto/UnBoxing: auto/unwrapping primitive types to wrapper type
 
-`equals()` vs `==`: `==` compares reference, `equals()` compares value
+`equals()` vs `==`: `==` compares reference in Java, `equals()` compares value based on how the class implements
 
-`==` vs `===` in Kotlin: `==` checks value, `===` checks reference
+`==` vs `===` in Kotlin: `==` checks `equals()`, `===` checks reference
 
 `Pair<T1, T2>`: pair 2 data together so no need to declare a new data class for storing them
 
