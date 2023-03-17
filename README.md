@@ -175,6 +175,34 @@ Drawables are used for everything else, only 1 resolution will be used
 
 `sp`: similar to dp except text size preference affects it too
 
+`ConstraintLayout` helpers:
+
+- Chains: a group of views that are linked to each other with bi-directional position constraints, can be used to distribute space between views evenly, eliminating the necessity of `LinearLayout`, they have different modes:
+
+    - `spread`: default mode, it will position the views in the chain at even intervals within the available space
+    
+    <img src="resources/chain_spread.png" alt="chain spread picture"/>
+    
+    - `spread_inside`: snaps the outermost views in the chain to the outer edges, and then positions the remaining views in the chain at equal intervals within the available space
+
+    <img src="resources/chain_spread_inside.png" alt="chain spread inside picture"/>
+
+    `layout_constraintHorizontal_weight` / `layout_constraintVertical_weight` can be used to adjust a view's "weight" in its width/height if its `layout_width`/`layout_height` is set to 0 and is in `spread` or `spread_inside` chains
+
+    - `packed`: packs the views together, and then centres the group within the available space, the positioning of the packed views can be further controlled by altering the `bias` value
+    
+    <img src="resources/chain_packed.png" alt="chain packed picture"/>
+    
+- `Barrier`: allows you to specify a constraint based on the height/weight of target views, which makes a `Barrier` flexible
+
+- `Guldeline`: specifies a fixed distance in dp or in percent based on the layout's size
+
+- `Flow`: a virtual layout which is able to wrap other views without adding a level to the layout hierarchy
+
+- `Layer`:
+
+- `Group`:
+
 ## Dependency Injection
 
 `activityViewModels()`: injects viewmodel shared in the activity
