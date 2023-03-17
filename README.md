@@ -285,6 +285,14 @@ View:
 
 `requestLayout()`: rerun from `measure()` process
 
+## Debug
+
+adb: a CLI tool used to communicate with a device, can be used to debug or install apps
+
+App Inspection: can be used to inspect the in-app database and network usage
+
+Profiler: enables tracking CPU, memory and energy usage with events shown in a timeline
+
 # Development
 
 CI: build->test->merge CD: automatically deployment
