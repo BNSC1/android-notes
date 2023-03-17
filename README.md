@@ -215,7 +215,7 @@ Drawables are used for everything else, only 1 resolution will be used
 
 - `Layer`: a virtual layout which animates multiple views at once as a single unit
 
-- `Group`:
+- `Group`: a virtual layout which controls visibility of multiple views
 
 ## Dependency Injection
 
