@@ -192,6 +192,10 @@ Drawables are used for everything else, only 1 resolution will be used
     - `packed`: packs the views together, and then centres the group within the available space, the positioning of the packed views can be further controlled by altering the `bias` value
     
     <img src="resources/chain_packed.png" alt="chain packed picture"/>
+    
+- `Barrier`: allows you to specify a constraint based on the height/weight of target views, which makes a `Barrier` flexible
+
+- `Guldeline`: specifies a fixed distance in dp or in percent based on the layout's size
 
 ## Dependency Injection
 
