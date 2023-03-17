@@ -197,6 +197,12 @@ Drawables are used for everything else, only 1 resolution will be used
 
 - `Guldeline`: specifies a fixed distance in dp or in percent based on the layout's size
 
+- `Flow`: a virtual layout which is able to wrap other views without adding a level to the layout hierarchy
+
+- `Layer`:
+
+- `Group`:
+
 ## Dependency Injection
 
 `activityViewModels()`: injects viewmodel shared in the activity
