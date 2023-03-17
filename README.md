@@ -179,16 +179,16 @@ Drawables are used for everything else, only 1 resolution will be used
 
 - Chains: a group of views that are linked to each other with bi-directional position constraints, can be used to distribute space between views evenly, eliminating the necessity of `LinearLayout`, they have different modes:
 
-`layout_constraintHorizontal_weight`/`layout_constraintVertical_weight` can be used to adjust a view's "weight" in its width/height if its `layout_width`/`layout_height` is set to 0 and is in `spread` or `spread_inside` chains
-
     - `spread`: default mode, it will position the views in the chain at even intervals within the available space
     
     <img src="resources/chain_spread.png" alt="chain spread picture"/>
     
     - `spread_inside`: snaps the outermost views in the chain to the outer edges, and then positions the remaining views in the chain at equal intervals within the available space
-    
+
     <img src="resources/chain_spread_inside.png" alt="chain spread inside picture"/>
-    
+
+    `layout_constraintHorizontal_weight` / `layout_constraintVertical_weight` can be used to adjust a view's "weight" in its width/height if its `layout_width`/`layout_height` is set to 0 and is in `spread` or `spread_inside` chains
+
     - `packed`: packs the views together, and then centres the group within the available space, the positioning of the packed views can be further controlled by altering the `bias` value
     
     <img src="resources/chain_packed.png" alt="chain packed picture"/>
