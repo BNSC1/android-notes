@@ -175,6 +175,22 @@ Drawables are used for everything else, only 1 resolution will be used
 
 `sp`: similar to dp except text size preference affects it too
 
+`ConstraintLayout` helpers:
+
+- Chains: a group of views that are linked to each other with bi-directional position constraints, can be used to distribute space between views evenly, eliminating the necessity of `LinearLayout`, they have different modes:
+
+    - `spread`: default mode, it will position the views in the chain at even intervals within the available space
+    
+    <img src="resources/chain_spread.png" alt="chain spread picture"/>
+    
+    - `spread_inside`: snaps the outermost views in the chain to the outer edges, and then positions the remaining views in the chain at equal intervals within the available space
+    
+    <img src="resources/chain_spread_inside.png" alt="chain spread inside picture"/>
+    
+    - `packed`: packs the views together, and then centres the group within the available space
+    
+    <img src="resources/chain_packed.png" alt="chain packed picture"/>
+
 ## Dependency Injection
 
 `activityViewModels()`: injects viewmodel shared in the activity
