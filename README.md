@@ -213,7 +213,7 @@ Drawables are used for everything else, only 1 resolution will be used
 
       <img src="resources/flow_wrap_aligned.png" alt="flow wrap aligned picture"/>
 
-- `Layer`:
+- `Layer`: a virtual layout which animates multiple views at once as a single unit
 
 - `Group`:
 
