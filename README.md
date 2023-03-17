@@ -199,6 +199,20 @@ Drawables are used for everything else, only 1 resolution will be used
 
 - `Flow`: a virtual layout which is able to wrap other views without adding a level to the layout hierarchy
 
+    - wrap modes:
+
+      - `none`: creates a horizontal/vertical chain out of referenced views
+
+      <img src="resources/flow_wrap_none.png" alt="flow wrap none picture"/>
+
+      - `chain`: also creates a chain out of referenced views, but will wrap to the next row/column if items don't fit into one, if there is leftover space in the next row/column, it will distribute the distance between items evenly
+
+      <img src="resources/flow_wrap_chain.png" alt="flow wrap chain picture"/>
+
+      - `aligned`: like `chain`, except it aligns items from left to right
+
+      <img src="resources/flow_wrap_aligned.png" alt="flow wrap aligned picture"/>
+
 - `Layer`:
 
 - `Group`:
