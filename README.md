@@ -478,6 +478,10 @@ Annotation: embed supplemental information to the source
 
 `Mutex().withLock()`: protect all modifications of the shared state with a critical section that is never executed concurrently
 
+`CoroutineExceptionHandler` only catches unhandled exception, that is, if the block already handles the exception, it will not be triggered
+
+`CoroutineExceptionHandler` has no effect on `async()` because the builder catches and represents the exception in the `Deferred` object
+
 ### Flow
 
 cold flow: only starts emitting values when it is subscribed, values are not shared among other subscribers either
