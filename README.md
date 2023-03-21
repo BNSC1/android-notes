@@ -500,6 +500,12 @@ Why use Flow (over Rx)?: has multiplatform support, suspending, enforced to be i
 
 `StateFlow` vs `SharedFlow`: Data rendered by the `StateFlow` (Text Composable) gets preserved after rotation. On the other hand, when using `SharedFlow`, the `Toast` does not get shown again after screen rotation. `StateFlow` supports `StateFlow.value`, but does not collect repeated values, does not support replaying beyond the latest value, and requires an initial value.
 
+`callbackFlow`: turns a callback listener into a Flow
+
+- `trySend()`: posts callback data to Flow
+
+- `awaitClose()`: unregister the callback listener when the Flow is closed
+
 Flow functions:
 
 - `transform()`: can emit arbitrary values many times
