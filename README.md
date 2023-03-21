@@ -502,7 +502,11 @@ Why use Flow (over Rx)?: has multiplatform support, suspending, enforced to be i
 
 `callbackFlow`: turns a callback listener into a Flow
 
-- `trySend()`: posts callback data to Flow
+- `trySend()`: posts callback data to Flow, will drop data not collected if the next data is sent
+
+- `send()`: similiar to `trySend()` but is a suspend function
+
+- `trySendBlocking()`: will block the newest emission until the collector has collected all previous emissions
 
 - `awaitClose()`: unregister the callback listener when the Flow is closed
 
