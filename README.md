@@ -345,6 +345,20 @@ ATDD: tests are written from the user's perspective "is this the result I expect
 
 UML Diagram: is used to visualize the flow of a program [Link](https://www.smartdraw.com/uml-diagram/)
 
+Software Development Lifecycle:
+
+1. Analysis: Gather, clarify and analyze requirements
+
+2. Plan: Architecture decisions, UI design and resource allocation
+
+3. Code: Implement decisions and design
+
+4. Test: Test if the code meets requirements
+
+5. Deploy: Put the project into production
+
+6. Maintenance: New features, bug fixes, monitoring
+
 # Programming basics
 
 SOLID:
