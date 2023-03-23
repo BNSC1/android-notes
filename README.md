@@ -307,11 +307,15 @@ Lifecycle of `viewLifeCycleOwner`: `onViewCreated()`~`onDestroyView()`
 
 Lifecycle of `LifecycleOwner` of the Fragment: `onCreate()`~`onDestroy()`
 
+- `onAttach()`: the fragment is added to a `FragmentManager`
+
 - `onCreate()`: initialize a fragment, when the fragment is added to a `FragmentManager`
 
 - `onCreateView()`: instantiate UI
 
 - `onViewCreated()`: gives subclasses a chance to initialize themselves once they know their view hierarchy has been completely created
+
+- `onViewStateRestored()`: view states such as checkbox check are restored
 
 - `onStart()`: called when the fragment is visible, tied with `onStart()` of the activity
 
@@ -321,9 +325,13 @@ Lifecycle of `LifecycleOwner` of the Fragment: `onCreate()`~`onDestroy()`
 
 - `onStop()`: when the fragment is no longer visible, tied with `onStop()` of the activity
 
+- `onSaveInstanceState()`: saves states of the fragment, so it can be restored to previous state if the process was terminated. Before API 28, this is invoked before `onStop()`
+
 - `onDestroyView()`: when the view `onCreateView()` created has been detached
 
 - `onDestroy()`: when the fragment is no longer used, when the fragment is removed from a `FragmentManager`
+
+- `onDetach()`: the fragment is removed from a `FragmentManager`
 
 View:
 
