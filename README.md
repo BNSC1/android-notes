@@ -277,6 +277,14 @@ Activity:
 
 if in `onStart()`, `finish()` is called, `onPause()` and `onStop()` won't be called and will just call `onDestroy()`
 
+In which situations Activity can be in the `onPause()` state and never calls `onStop()`?: 
+
+- Picture-in-Picture mode: the user cannot interact with the activity but it is still visible
+
+- Split screen: when the user has A activity call `onResume()` by interacting with it, B activity has `onPause()` called, but B is still visible
+
+- Another activity started with transparent background: GooglePay purchase screen is actually an Activity with transparent background rather than a Dialog, the previous activity is still visible
+
 `setContentView()` is called in `onCreate()` because `onCreate()` is only called once
 
 `onSavedInstanceState()`: store data before pausing the activity
