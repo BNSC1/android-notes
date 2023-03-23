@@ -47,7 +47,7 @@ Context
 
 Application: contains all other components such as activities and services.
 
-Fragment: has its layout and its behavior with its lifecycle callbacks, can add or remove fragments in the activity, can combine multiple fragments in an activity, can be reused in multiple activities, the life cycle is closely related to the lifecycle of its host activity
+Fragment: has its layout and its behavior with its lifecycle callbacks, can add or remove fragments in the activity, can combine multiple fragments in an activity, can be reused in multiple activities, the lifecycle is closely related to the lifecycle of its host activity.  Fragment was introduced with Android 3.0, which also introduced tablet support.
 
 - Fragment replace: removes existing fragment and adds new fragment
 
