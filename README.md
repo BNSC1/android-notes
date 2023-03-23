@@ -73,7 +73,9 @@ Mipmap folder: for the launcher icon
 
 AIDL: handles how the client and the service interact
 
-ViewBinding vs DataBinding: DataBinding allows binding data to views while having a longer compile time
+ViewBinding: eliminate the need of `findViewById()` by generating binding class for each XML layout
+
+DataBinding: in addition to features in ViewBinding, it allows binding variables, invoking methods, in XML while having a longer compile time
 
 ## Architecture
 
