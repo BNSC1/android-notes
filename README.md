@@ -24,6 +24,8 @@ Module: a collection of source files and build settings to divide the project fo
 
 `AndroidManifest.xml`: declare existing components, API level, required permissions, required hardware features
 
+- `manifestPlaceholders`: creates "variables" to be used in `AndroidManifest.xml`
+
 - `<intent-filter>`: specifies the types of intents components can respond to
 
 - launchMode:
