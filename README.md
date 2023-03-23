@@ -380,9 +380,11 @@ Abstract class: can only inherit 1 abstract class, has constructors. Used when a
 
 Serialization: a process of translating a data structure or object state into a format that can be stored or transmitted
 
-Serializable: stores data to file/disk
+Serializable: relys on reflection so it takes hit in performance
 
-Parcelable: faster than serializable, more complex to implement, won't be reflected(analyze the structure of the program)
+Parcelable: does not rely on reflection so it is faster than `Serializable`, more complex to implement. However with `@Parcelize` annotation in kotlinx,  `Parcelable` methods will be generated automatically
+
+Both `Serializable` and `Parcelable` are used to transfer data between screens, usually via `Bundle`
 
 Weak reference: referenced object does not need to stay in memory
 
