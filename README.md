@@ -643,6 +643,10 @@ Why is `String` immutable?: to prevent manipulation of sensitive data
 
 Why unit test?: identify defects early, enable code reuse, improve code readability, reduce refactor cost, quickly get feedback
 
+Fake object: lightweight and usually frameworkless implementation of the real-world functions for testing
+
+Mock object: object with preconfigured behaviors that is expected to be run defined times in a test
+
 # Network
 
 gRPC: a framework for communication with Protocol Buffer
