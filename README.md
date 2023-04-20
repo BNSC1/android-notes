@@ -727,6 +727,8 @@ DFS uses the stack.
 
 Why HashMap has a time complexity of O(1)?: traverses between hash strings instead of elements in the map.
 
+Implementation of PriorityQueue defaults to min heap unless compareByDescending() is used.
+
 # System Design
 
 Steps of system designing:
