@@ -3,6 +3,7 @@
 ## Components
 
 Activity: entry point for user interaction e.g. track what is on the screen
+- Activity with transparent background: apply a theme which its `android:windowIsTranslucenttrue` is set to true and its `android:windowBackground` is set to transparent
 
 Service: run in the background e.g. music playback
 
@@ -76,6 +77,13 @@ AIDL: handles how the client and the service interact
 ViewBinding: eliminates the need of `findViewById()` by generating binding class for each XML layout
 
 DataBinding: in addition to features in ViewBinding, it allows binding variables, invoking methods, in XML while having a longer compile time
+
+How to increase the Notification delivery rate in android?: 
+
+- Use a high-priority notification channel
+- Use appropriate notification category
+- Avoid sending too many notifications
+- Be mindful of battery consumption of the app
 
 ## Architecture
 
@@ -459,6 +467,8 @@ Overloading: methods have the same name but different signatures e.g. parameters
 Kapt: generate annotation for Kotlin
 
 Annotation: embed supplemental information to the source
+
+Annotation processing: allows compile-time code generation for annotated classes/methods, in order to simpify development
 
 `data class`: some utility functions are created by Kotlin if it is marked data class:
 
