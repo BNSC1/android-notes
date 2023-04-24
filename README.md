@@ -725,9 +725,9 @@ BFS has no backtracking and uses a queue.
 
 DFS uses the stack.
 
-Why HashMap has a time complexity of O(1)?: traverses between hash strings instead of elements in the map.
+Why does accessing `HashMap` have a time complexity of O(1)?: traverses between hash strings instead of elements in the map.
 
-Implementation of PriorityQueue defaults to min heap unless compareByDescending() is used.
+Implementation of `PriorityQueue` defaults to min heap unless `compareByDescending()` is used.
 
 # System Design
 
