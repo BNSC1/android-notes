@@ -3,7 +3,7 @@
 ## Components
 
 Activity: entry point for user interaction e.g. track what is on the screen
-- Activity with transparent background: apply a theme which its `android:windowIsTranslucenttrue` is set to true and its `android:windowBackground` is set to transparent
+- Activity with transparent background: apply a theme which its `android:windowIsTranslucent` is set to true and its `android:windowBackground` is set to transparent
 
 Service: run in the background e.g. music playback
 
