@@ -269,6 +269,8 @@ Memory Leak: unused objects GC is unable to clear
 
 Bitmap Pool enables the reuse of bitmaps, effectively lowering frequency of GC
 
+Image-loading libraries utilize this to load bitmaps more effectively, they also downscale images just enough to fit into a view to avoid excessive memory usage
+
 ## Lifecycle
 
 Activity:
