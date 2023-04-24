@@ -363,6 +363,10 @@ App Inspection: can be used to inspect the in-app database and network usage
 
 Profiler: enables tracking CPU, memory and energy usage with events shown in a timeline
 
+Thread dump can be used to identify deadlocks
+
+Heap dump can be used to identify memory issues
+
 # Development
 
 CI: build->test->merge CD: automatically deployment
