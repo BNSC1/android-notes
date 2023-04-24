@@ -267,6 +267,8 @@ What to be cautious about while using Bitmap?: Downscale the bitmap or load the 
 
 Memory Leak: unused objects GC is unable to clear
 
+Bitmap Pool enables the reuse of bitmaps, effectively lowering frequency of GC
+
 ## Lifecycle
 
 Activity:
