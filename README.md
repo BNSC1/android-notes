@@ -271,7 +271,11 @@ Bitmap Pool enables the reuse of bitmaps, effectively lowering frequency of GC
 
 Image-loading libraries utilize this to load bitmaps more effectively, they also downscale images just enough to fit into a view to avoid excessive memory usage
 
+## Publishment & Analytics
+
 Google/Firebase Analytics can be used to provide matrics on the number of active users, the number of installs, and the number of uninstalls
+
+Staged rollout to control percentage of users to release to, to collect possible issues before fully release
 
 ## Lifecycle
 
