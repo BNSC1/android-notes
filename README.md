@@ -508,6 +508,8 @@ Annotation processing: allows compile-time code generation for annotated classes
 
 ### Coroutines
 
+Kotlin Coroutines: enables writing in synchronous way, while the code actually runs asynchronously and concurrently
+
 `CoroutineScope`: the lifecycle of this coroutine
 
 `Job`: its main responsibility is to manage coroutine cancellation.
@@ -599,6 +601,8 @@ Flow functions:
 - `flatMapMerge()`: execute all emitted flow concurrently
 
 - `debounce()`: emission is ignored until defined time elapsed
+
+- `retry()`: handles exception by retrying until the retry limit is reached, then it will pass the exception to downstream
 
 ### String
 
