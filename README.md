@@ -448,7 +448,7 @@ inline function: inlined functions will not be actual functions in bytecode, ins
 
 - `noinline`: `noinline` lambdas do not support non-local control flow, i.e you won’t be able to propagate your return to the calling function.
 
-`@JvmStatic`: marks the function as static in java, so you don't have to call that function by AppUtils.INSTANCE.install()
+`@JvmStatic`: marks the function as static in java, so you don't have to call that function by `AppUtils.INSTANCE.install()`
 
 `@JvmOverloads`: java does not support default parameters, use this annotation to tell the compiler to create overloads for java
 
