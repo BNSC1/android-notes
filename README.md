@@ -515,6 +515,10 @@ Static block in a class is run before invoking a static method, or before instan
 
 Static methods cannot be overridden
 
+`throw` manually throws an exception
+
+`throws` in Java or `@Throws` in Kotlin indicates that a function may throw an exception
+
 ### Coroutines
 
 Kotlin Coroutines: enables writing in synchronous way, while the code actually runs asynchronously and concurrently
@@ -552,6 +556,8 @@ Kotlin Coroutines: enables writing in synchronous way, while the code actually r
 `CoroutineExceptionHandler` only catches unhandled exception, that is, if the block already handles the exception, it will not be triggered
 
 `CoroutineExceptionHandler` has no effect on `async()` because the builder catches and represents the exception in the `Deferred` object
+
+
 
 ### Flow
 
