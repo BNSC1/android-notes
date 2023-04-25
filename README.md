@@ -608,13 +608,17 @@ Flow functions:
 
 String concatenation: `String`s are immutable in Java, so when a `String` is concatenated, it creates a new `String` and discards the old one
 
-`StringBuilder`: mutable, asynchronous thus unsuitable for multi-threaded conditions, but is the fastest
+`StringBuilder`: mutable, asynchronous thus unsuitable for multi-threaded conditions, but is the fastest. It will automatically expand its capacity to fit added chars
 
 `StringBuffer`: mutable, synchronous thus suitable for multi-threaded conditions, but is slower than StringBuilder
 
 How is `String` implemented?: it is a wrapper of an array of chars which is final
 
-Why is `String` immutable?: to prevent manipulation of sensitive data
+Why is `String` immutable?: 
+- prevent manipulation of sensitive data
+- thread-safety
+- can be cached in string constant pool
+- more performant than being mutable
 
 ### List function
 
