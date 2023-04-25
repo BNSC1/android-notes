@@ -513,6 +513,8 @@ Annotation processing: allows compile-time code generation for annotated classes
 
 Static block in a class is run before invoking a static method, or before instantiating the first object of the class, it is run only once
 
+Static methods cannot be overridden
+
 ### Coroutines
 
 Kotlin Coroutines: enables writing in synchronous way, while the code actually runs asynchronously and concurrently
