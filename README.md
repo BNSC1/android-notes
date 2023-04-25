@@ -598,6 +598,8 @@ Flow functions:
 
 - `flatMapMerge()`: execute all emitted flow concurrently
 
+- `debounce()`: emission is ignored until defined time elapsed
+
 ### String
 
 String concatenation: `String`s are immutable in Java, so when a `String` is concatenated, it creates a new `String` and discards the old one
