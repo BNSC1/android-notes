@@ -511,6 +511,8 @@ Annotation processing: allows compile-time code generation for annotated classes
 
 `with()`: inputs object as a parameter, object as a receiver in lambda returns the lambda result
 
+Static block in a class is run before invoking a static method, or before instantiating the first object of the class, it is run only once
+
 ### Coroutines
 
 Kotlin Coroutines: enables writing in synchronous way, while the code actually runs asynchronously and concurrently
