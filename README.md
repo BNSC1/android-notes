@@ -161,6 +161,8 @@ Gson vs Moshi: Moshi is written in Kotlin, is lighter, uses Kotlin code-gen inst
 
 Why Moshi uses Kotlin codegen: it allows generating code at compile time instead of at runtime with reflection
 
+OkHttp Interceptor can cache network data so the app is still usable offline, it can also intercept network requests and print them
+
 ## View
 
 `View`: superclass for all UI components
