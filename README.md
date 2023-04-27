@@ -372,7 +372,7 @@ View:
 
 ## Debug
 
-adb: a CLI tool used to communicate with a device, can be used to debug or install apps
+adb: a CLI tool used to communicate with a device, can be used to debug, install apps, capture screenshots, record screen and transfer files
 
 App Inspection: can be used to inspect the in-app database and network usage
 
