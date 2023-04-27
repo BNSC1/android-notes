@@ -773,7 +773,7 @@ Why is `String` immutable?:
 
 - Mediator: this pattern forces components to collaborate via the mediator, components extend the mediator interface, while the concrete mediator object holds references to all components, components are not aware of each other, used to reduce dependencies
 
-# Unit Test
+# Test
 
 3A: Arrange, Act, Assert
 
@@ -782,6 +782,8 @@ Why unit test?: identify defects early, enable code reuse, improve code readabil
 Fake object: lightweight and usually frameworkless implementation of the real-world functions for testing
 
 Mock object: object with preconfigured behaviors that is expected to be run defined times in a test
+
+Robolectric: a testing framework for Android that allows developers to write unit tests that run on the JVM instead of on a device or emulator. The framework provides a simulated Android environment that allows developers to test their code in a controlled and isolated environment, enabling faster and more efficient testing.
 
 # Network
 
