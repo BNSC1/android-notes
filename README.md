@@ -420,6 +420,10 @@ Obfuscation: intentionally making code more difficult to understand, by renaming
 
 Minification: reduce the size of code by removing unnecessary characters such as whitespace, comments, and unused code. The goal of minification is to reduce the size of the code, which can make the app load faster and use less storage space.
 
+Multiple APKs: allows developers to create different APKs for the same application, each optimized for different device configurations
+
+Android App Bundle: If an AAB is uploaded to Google Play, it will provide optimized APK for respective device automatically
+
 # Programming basics
 
 SOLID:
