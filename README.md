@@ -530,6 +530,8 @@ Advantages of making an object final:
 
 It is a bad idea to call an abstract method from a constructor because the implementation of the method is not yet known, leading to unexpected behavior
 
+Anonymous class enables quick implementation and definitation of an interface, or extending a class without naming said class
+
 ### Coroutines
 
 Kotlin Coroutines: enables writing in synchronous way, while the code actually runs asynchronously and concurrently
