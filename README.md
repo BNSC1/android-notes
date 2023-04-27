@@ -412,6 +412,14 @@ Google/Firebase Analytics can be used to provide matrics on the number of active
 
 Staged rollout to control percentage of users to release to, to collect possible issues before fully release
 
+How to change parameters in an app without updating?:
+1. download configurations from remote server
+2. Firebase Remote Config
+
+Obfuscation: intentionally making code more difficult to understand, by renaming classes, variables, and methods to meaningless or cryptic names. The goal of obfuscation is to make it harder for someone to reverse engineer the code or extract sensitive information from it.
+
+Minification: reduce the size of code by removing unnecessary characters such as whitespace, comments, and unused code. The goal of minification is to reduce the size of the code, which can make the app load faster and use less storage space.
+
 # Programming basics
 
 SOLID:
