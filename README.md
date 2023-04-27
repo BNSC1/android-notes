@@ -572,6 +572,8 @@ Java memory model defines two types of memory:
 - Heap is a shared memory region where all objects are allocated. The Heap is managed by the garbage collector and is used to store objects that are created at runtime. All threads in a Java program share the same Heap, and objects on the Heap can be accessed by multiple threads.
 - Stack is a memory region where each thread has its own stack frame. A stack frame contains information about method calls, local variables, and other data specific to a particular thread. When a thread calls a method, a new stack frame is created for that method. When the method completes, the stack frame is removed. The Stack is used to store primitive types and object references, and is not shared between threads.
 
+`Iterator`: an interface that is used to traverse through collections of objects, such as `ArrayList`, `LinkedList`, and `HashSet`. The `Iterator` provides a way to iterate over the collection and access its elements one by one without exposing the underlying data structure of the collection.
+
 ### Coroutines
 
 Kotlin Coroutines: enables writing in synchronous way, while the code actually runs asynchronously and concurrently
