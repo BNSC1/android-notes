@@ -459,6 +459,8 @@ Instantiation is the process of creating a new object
 
 Initialization is the process of setting the initial values of an object's instance variables
 
+`PriorityQueue` allows elements to be inserted with an associated priority, and provides operations to remove the element with the highest priority, used in sorting, task scheduling, and event processing
+
 ## Kotlin/Java
 
 inline function: inlined functions will not be actual functions in bytecode, instead the piece of code is part of the function used inline function, and will not be able to access private members/methods of your enclosing class. You will need to make those members/methods internal and then annotate them with `@PublishedApi`. Will be able to return from the lambda which in turn will return from the calling function.
@@ -538,6 +540,8 @@ Static methods cannot be overridden
 `finally` is invoked whether an exception is handled or not in `try-catch`
 
 `finalize()` is invoked to perform cleaning up before being garbage collected, deprecated in Java 9 as it can lead to unexpected behavior
+
+`String.intern()` returns a canonical representation of a String object from the string pool
 
 Advantages of making an object final:
 - ensuring it is never changed after initialization
