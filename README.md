@@ -787,6 +787,8 @@ Robolectric: a testing framework for Android that allows developers to write uni
 
 Espresso: a testing framework for Android that allows writeing automated tests for UI testing. Espresso is designed to help developers test the user interface of their applications on real Android devices or emulators.
 
+`RuleChain` is needed when multiple rules are in a test class e.g. `@get:Rule val rules = RuleChain.outerRule(ruleA).around(ruleB)`
+
 # Network
 
 gRPC: a framework for communication with Protocol Buffer
