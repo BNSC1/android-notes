@@ -433,7 +433,13 @@ Parcelable: does not rely on reflection so it is faster than `Serializable`, mor
 
 Both `Serializable` and `Parcelable` are used to transfer data between screens, usually via `Bundle`
 
-Weak reference: referenced object does not need to stay in memory
+Strong reference: as long as there is a strong reference to an object, it will not be eligible for garbage collection
+
+Weak reference: cleared by the garbage collector as soon as there are no more strong references to the object
+
+Soft reference: cleared by the garbage collector only when the JVM is running low on memory. Soft references are typically used to implement memory-sensitive caches
+
+Phantom reference: enqueued by the garbage collector after the object to which it refers has been finalized, but before the object's memory has been reclaimed. Phantom references are typically used to perform post-mortem cleanup operations on objects, such as removing their associated resources, after they have been finalized.
 
 OOP: a concept about classes and objects which can be done in inheritance, polymorphism, abstraction, and encapsulation
 
@@ -444,6 +450,10 @@ Abstraction: exposes only what the object does e.g. abstract class and interface
 Encapsulation: hides away implementation detail e.g. private, protected
 
 Inheritance: inherit behaviors and info of the superclass
+
+It is a bad idea to call an abstract method from a constructor because the implementation of the method is not yet known, leading to unexpected behavior
+
+Anonymous class enables quick implementation and definitation of an interface, or extending a class without naming said class
 
 ## Kotlin/Java
 
@@ -519,7 +529,9 @@ Static methods cannot be overridden
 
 `throws` in Java or `@Throws` in Kotlin indicates that a function may throw an exception
 
-`finally` is invoked whether an exception is handled or not in try-catch
+`try-catch` is used to gracefully recover from an exception
+
+`finally` is invoked whether an exception is handled or not in `try-catch`
 
 `finalize()` is invoked to perform cleaning up before being garbage collected, deprecated in Java 9 as it can lead to unexpected behavior
 
@@ -528,11 +540,17 @@ Advantages of making an object final:
 - making it thread safe
 - allows JVM to optimize it
 
-It is a bad idea to call an abstract method from a constructor because the implementation of the method is not yet known, leading to unexpected behavior
-
-Anonymous class enables quick implementation and definitation of an interface, or extending a class without naming said class
-
 `transient` excludes said field from being serialized, such as conditental data, cache field or non-serializable field
+
+A checked exception must be declared in a method or constructor's throws clause. When a checked exception is thrown, the calling method must either handle the exception or declare it in its own throws clause. e.g. `IOException`, `SQLException`, `ClassNotFoundException`.
+
+An unchecked exception, also known as a runtime exception does not need to be declared in a method or constructor's throws clause. Unchecked exceptions are usually caused by programming errors, such as null pointer dereferences, division by zero, or out-of-bounds array accesses. Examples of unchecked exceptions in Java include `NullPointerException`, `ArithmeticException`, and `ArrayIndexOutOfBoundsException`.
+
+`volatile` ensure that changes to a shared variable's value will be immediately visible to all threads that access the variable
+
+`synchronized` ensures that only one thread can execute a block of code or access an object's state at a time, preventing race conditions and other synchronization problems
+
+`ThreadPoolExecutor` is for managing and executing tasks in parallel
 
 ### Coroutines
 
