@@ -163,6 +163,8 @@ Why Moshi uses Kotlin codegen: it allows generating code at compile time instead
 
 OkHttp Interceptor can cache network data so the app is still usable offline, it can also intercept network requests and print them
 
+Multipart request: a type of HTTP request that allows you to send multiple types of data in a single request. This is useful when you need to upload files or send a form with both text and binary data.
+
 ## View
 
 `View`: superclass for all UI components
