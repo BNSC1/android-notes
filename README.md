@@ -99,6 +99,8 @@ How to increase the Notification delivery rate in android?:
 5. Generate reports
 6. Preload data
 
+In `LiveData`, `setValue()` must be called from main thread, while `postValue()` can be used to update from background thread, however if it is invoked multiple times before the main thread executes, only the latest posted value may be observed
+
 ## Architecture
 
 Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
