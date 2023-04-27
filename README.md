@@ -87,7 +87,13 @@ How to increase the Notification delivery rate in android?:
 
 ## Architecture
 
+Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
+
+View: mostly Activity, Fragment and XML. Sends the user action to the middleman
+
 MVC:
+
+The view has direct access to the model, the controller handles user interaction and updates the model
 
 - +streamlines code
 
@@ -101,6 +107,8 @@ MVC:
 
 MVP:
 
+Presenter: the view calls the view-model via the contract interface, the view-model passes update event to the view via the contract interface
+
 - +easy unit-testing
 
 - +view/presenter reusable
@@ -113,9 +121,9 @@ MVP:
 
 - =view has reference to presenter
 
-- presenter: communicates with a view via the interface
-
 MVVM:
+
+ViewModel: the view calls the view-model directly, the view-model passes update event to the view via observables e.g. `LiveData` or `StateFlow`
 
 - +no coupled view/viewmodel
 
