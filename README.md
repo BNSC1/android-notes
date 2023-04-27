@@ -785,6 +785,8 @@ Mock object: object with preconfigured behaviors that is expected to be run defi
 
 Robolectric: a testing framework for Android that allows developers to write unit tests that run on the JVM instead of on a device or emulator. The framework provides a simulated Android environment that allows developers to test their code in a controlled and isolated environment, enabling faster and more efficient testing.
 
+Espresso: a testing framework for Android that allows writeing automated tests for UI testing. Espresso is designed to help developers test the user interface of their applications on real Android devices or emulators.
+
 # Network
 
 gRPC: a framework for communication with Protocol Buffer
