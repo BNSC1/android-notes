@@ -85,6 +85,12 @@ How to increase the Notification delivery rate in android?:
 - Avoid sending too many notifications
 - Be mindful of battery consumption of the app
 
+`ViewModel` lifecycle in an Android app: 
+1. The view requests a `ViewModel` from the `ViewModelProvider`, if it exists skip step 2, if not, create a new one and return it after its initialization
+2. A new `ViewModel` is created, it is initialized with any data that is needed to set up its state. This data can come from a variety of sources, such as a database or a remote API.
+3. If the view gets destroyed or recreated due to memory constraint or configuration change, the `ViewModel` is retained, it is requested again like in step 1
+4. If the view is destroyed because the user closes the app or leave the page, the `ViewModel` gets destroyed too
+
 ## Architecture
 
 Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
