@@ -436,6 +436,8 @@ DEX: "Dalvik Executable" is a file format used by the Android operating system t
 
 Multidex: a mechanism provided by Android to overcome limitation of 65,536 method references. It allows apps to have multiple DEX files, each containing a subset of the app's method references. When the app is run, the Android runtime loads all the DEX files and combines them into a single Dalvik Virtual Machine (VM) instance.
 
+How to debug database in an app: Database Inspector can be used to do CRUD and run custom quaries to the database
+
 # Programming basics
 
 SOLID:
