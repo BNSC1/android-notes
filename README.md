@@ -258,7 +258,7 @@ What Are Modules In Dagger?: installed to that component to allow binding to be 
 
 Why does the Android App lag?: when GC occurs, your UI stops updating until GC is done. When there is too much done on the main thread
 
-What is Garbage Collection?: reclaiming runtime memory by destroying unused objects
+What is Garbage Collection?: reclaiming runtime memory by destroying unreferenced objects
 
 How does Garbage Collection work?: mark roots(objects referenced by static fields, application class, live thread)->mark referenced objects->mark reachable objects->GC unreachable objects
 
@@ -455,6 +455,10 @@ It is a bad idea to call an abstract method from a constructor because the imple
 
 Anonymous class enables quick implementation and definitation of an interface, or extending a class without naming said class
 
+Instantiation is the process of creating a new object
+
+Initialization is the process of setting the initial values of an object's instance variables
+
 ## Kotlin/Java
 
 inline function: inlined functions will not be actual functions in bytecode, instead the piece of code is part of the function used inline function, and will not be able to access private members/methods of your enclosing class. You will need to make those members/methods internal and then annotate them with `@PublishedApi`. Will be able to return from the lambda which in turn will return from the calling function.
@@ -551,6 +555,14 @@ An unchecked exception, also known as a runtime exception does not need to be de
 `synchronized` ensures that only one thread can execute a block of code or access an object's state at a time, preventing race conditions and other synchronization problems
 
 `ThreadPoolExecutor` is for managing and executing tasks in parallel
+
+Java memory model defines the rules and guarantees for how threads interact with shared memory in a Java program. It specifies how threads can access shared data and how changes made by one thread become visible to other threads. It guarantees 2 contracts:
+- Visibility: Changes made by one thread to shared memory are guaranteed to be visible to other threads that access the same memory.
+- Atomicity: Operations on shared memory are guaranteed to be executed atomically, meaning that they are either completely executed or not executed at all.
+
+Java memory model defines two types of memory:
+- Heap is a shared memory region where all objects are allocated. The Heap is managed by the garbage collector and is used to store objects that are created at runtime. All threads in a Java program share the same Heap, and objects on the Heap can be accessed by multiple threads.
+- Stack is a memory region where each thread has its own stack frame. A stack frame contains information about method calls, local variables, and other data specific to a particular thread. When a thread calls a method, a new stack frame is created for that method. When the method completes, the stack frame is removed. The Stack is used to store primitive types and object references, and is not shared between threads.
 
 ### Coroutines
 
