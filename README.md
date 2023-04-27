@@ -523,6 +523,11 @@ Static methods cannot be overridden
 
 `finalize()` is invoked to perform cleaning up before being garbage collected, deprecated in Java 9 as it can lead to unexpected behavior
 
+Advantages of making an object final:
+- ensuring it is never changed after initialization
+- making it thread safe
+- allows JVM to optimize it
+
 ### Coroutines
 
 Kotlin Coroutines: enables writing in synchronous way, while the code actually runs asynchronously and concurrently
