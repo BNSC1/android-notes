@@ -532,6 +532,8 @@ It is a bad idea to call an abstract method from a constructor because the imple
 
 Anonymous class enables quick implementation and definitation of an interface, or extending a class without naming said class
 
+`transient` excludes said field from being serialized, such as conditental data, cache field or non-serializable field
+
 ### Coroutines
 
 Kotlin Coroutines: enables writing in synchronous way, while the code actually runs asynchronously and concurrently
