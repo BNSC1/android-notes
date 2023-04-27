@@ -528,6 +528,8 @@ Advantages of making an object final:
 - making it thread safe
 - allows JVM to optimize it
 
+It is a bad idea to call an abstract method from a constructor because the implementation of the method is not yet known, leading to unexpected behavior
+
 ### Coroutines
 
 Kotlin Coroutines: enables writing in synchronous way, while the code actually runs asynchronously and concurrently
