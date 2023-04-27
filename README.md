@@ -443,7 +443,9 @@ Phantom reference: enqueued by the garbage collector after the object to which i
 
 OOP: a concept about classes and objects which can be done in inheritance, polymorphism, abstraction, and encapsulation
 
-Polymorphism: passing different parameters have different behaviors
+Polymorphism: same method name can behave differently in different classes
+
+Overloading: passing different parameters will give different behaviors
 
 Abstraction: exposes only what the object does e.g. abstract class and interface
 
@@ -460,6 +462,8 @@ Instantiation is the process of creating a new object
 Initialization is the process of setting the initial values of an object's instance variables
 
 `PriorityQueue` allows elements to be inserted with an associated priority, and provides operations to remove the element with the highest priority, used in sorting, task scheduling, and event processing
+
+Generics: provide a way to write generic classes and methods that can work with different types, while still providing compile-time type safety
 
 ## Kotlin/Java
 
