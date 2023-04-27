@@ -276,12 +276,6 @@ Bitmap Pool enables the reuse of bitmaps, effectively lowering frequency of GC
 
 Image-loading libraries utilize this to load bitmaps more effectively, they also downscale images just enough to fit into a view to avoid excessive memory usage
 
-## Publishment & Analytics
-
-Google/Firebase Analytics can be used to provide matrics on the number of active users, the number of installs, and the number of uninstalls
-
-Staged rollout to control percentage of users to release to, to collect possible issues before fully release
-
 ## Lifecycle
 
 Activity:
@@ -386,6 +380,8 @@ StrictMode: a developer tool in Android that helps identify potential performanc
 
 # Development
 
+Gradle: a build automation tool that is used to build, test, and package Android apps. It provides a flexible and powerful build system that can be used to automate complex build tasks and manage dependencies.
+
 CI: build->test->merge CD: automatically deployment
 
 Scrum: iterative development, daily meeting to report and adjust the process
@@ -393,6 +389,8 @@ Scrum: iterative development, daily meeting to report and adjust the process
 ATDD: tests are written from the user's perspective "is this the result I expected?"
 
 UML Diagram: is used to visualize the flow of a program [Link](https://www.smartdraw.com/uml-diagram/)
+
+Lint: a static code analysis tool that is included with the Android SDK. It is used to analyze the source code of an Android application and identify potential issues, such as performance problems, coding style violations, and security vulnerabilities.
 
 Software Development Lifecycle:
 
@@ -407,6 +405,12 @@ Software Development Lifecycle:
 5. Deploy: Put the project into production
 
 6. Maintenance: New features, bug fixes, monitoring
+
+Firebase: a mobile app development platform that provides a range of tools and services for building Android apps. Such as cloud storage, real-time databases, and authentication, as well as tools for testing, monitoring, and optimizing app performance.
+
+Google/Firebase Analytics can be used to provide matrics on the number of active users, the number of installs, and the number of uninstalls
+
+Staged rollout to control percentage of users to release to, to collect possible issues before fully release
 
 # Programming basics
 
