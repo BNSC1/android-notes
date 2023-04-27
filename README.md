@@ -380,7 +380,12 @@ StrictMode: a developer tool in Android that helps identify potential performanc
 
 # Development
 
-Gradle: a build automation tool that is used to build, test, and package Android apps. It provides a flexible and powerful build system that can be used to automate complex build tasks and manage dependencies.
+Gradle: a build automation tool that is used to build, test, and package Android apps. It provides a flexible and powerful build system that can be used to automate complex build tasks and manage dependencies. It provides:
+1. Dependency management: Gradle makes it easy to manage dependencies for a project, including downloading and caching dependencies, resolving conflicts, and specifying custom repositories.
+2. Build configuration: Gradle allows developers to configure the build process using a Groovy-based DSL, providing a high degree of flexibility and customization.
+3. Task-based build system: Gradle is a task-based build system, which means that it defines a set of tasks that can be run independently or as part of a larger build process. This allows developers to build and test their app incrementally, without having to rebuild the entire app every time.
+4. Incremental builds: Gradle supports incremental builds, which means that it only rebuilds the parts of the app that have changed since the last build. This can significantly reduce build times and improve developer productivity.
+5. Plugin architecture: Gradle has a plugin architecture that allows developers to extend the build system with custom plugins. This makes it easy to integrate with other tools and technologies, such as testing frameworks, code analysis tools, and continuous integration servers.
 
 CI: build->test->merge CD: automatically deployment
 
@@ -407,6 +412,7 @@ Software Development Lifecycle:
 6. Maintenance: New features, bug fixes, monitoring
 
 Firebase: a mobile app development platform that provides a range of tools and services for building Android apps. Such as cloud storage, real-time databases, and authentication, as well as tools for testing, monitoring, and optimizing app performance.
+- Firebase Realtime Database: a cloud-hosted NoSQL database that allows developers to store and sync data in real-time across multiple clients
 
 Google/Firebase Analytics can be used to provide matrics on the number of active users, the number of installs, and the number of uninstalls
 
@@ -420,9 +426,15 @@ Obfuscation: intentionally making code more difficult to understand, by renaming
 
 Minification: reduce the size of code by removing unnecessary characters such as whitespace, comments, and unused code. The goal of minification is to reduce the size of the code, which can make the app load faster and use less storage space.
 
+ProGuard: a code obfuscation tool that is used to shrink, optimize, and obfuscate Java bytecode. When used correctly, ProGuard can help to reduce the size of your app and protect your code from reverse engineering. However, it may remove code that is necessary for an app to run, so monitoring after obfuscation is recommended
+
 Multiple APKs: allows developers to create different APKs for the same application, each optimized for different device configurations
 
 Android App Bundle: If an AAB is uploaded to Google Play, it will provide optimized APK for respective device automatically
+
+DEX: "Dalvik Executable" is a file format used by the Android operating system to execute compiled code. The DEX format is optimized for Android's virtual machine, the Dalvik Virtual Machine (DVM), which is designed to run on resource-limited devices such as smartphones and tablets.
+
+Multidex: a mechanism provided by Android to overcome limitation of 65,536 method references. It allows apps to have multiple DEX files, each containing a subset of the app's method references. When the app is run, the Android runtime loads all the DEX files and combines them into a single Dalvik Virtual Machine (VM) instance.
 
 # Programming basics
 
