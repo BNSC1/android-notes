@@ -382,6 +382,8 @@ Thread dump can be used to identify deadlocks
 
 Heap dump can be used to identify memory issues
 
+StrictMode: a developer tool in Android that helps identify potential performance and threading issues in an application, by detecting violations of certain rules that are known to cause performance problems, such as disk access on the main thread, network access on the main thread, and long-running operations on the UI thread.
+
 # Development
 
 CI: build->test->merge CD: automatically deployment
