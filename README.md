@@ -91,6 +91,14 @@ How to increase the Notification delivery rate in android?:
 3. If the view gets destroyed or recreated due to memory constraint or configuration change, the `ViewModel` is retained, it is requested again like in step 1
 4. If the view is destroyed because the user closes the app or leave the page, the `ViewModel` gets destroyed too
 
+`WorkManager` provides a way to schedule and execute background tasks, its use-cases are:
+1. Sync data
+2. Push notifications
+3. Upload/Download files
+4. Do background cleanup
+5. Generate reports
+6. Preload data
+
 ## Architecture
 
 Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
