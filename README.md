@@ -105,6 +105,13 @@ Android Support Library: a collection of libraries that provide backward-compati
 
 Multitouch can be handled with `MotionEvent`, `pointerCount` is used to get the number of touch points currently on the screen, and a loop is used to retrieve the position of each touch point using the getX() and getY() methods.
 
+Bundle class is commonly used for passing data between activities, fragments, and other components. While it may be possible to use a simple Map data structure for passing data, there are several reasons why Bundle is a better choice:
+1. Type safety: Bundle provides type safety for the data that is being passed. This means that the data is checked to ensure that it conforms to a specific data type, which can help prevent errors and improve code reliability.
+2. Serialization: Bundle provides built-in serialization support for many common data types, such as strings, integers, and arrays. This makes it easy to pass data between components, even if the data needs to be persisted across app restarts or device rotations.
+3. Compatibility: Bundle is a standard Android class that is widely used across the Android platform. This means that other components, such as system services and third-party libraries, are designed to work with Bundle, which can improve compatibility and reduce the risk of errors.
+4. Performance: Bundle is optimized for performance in the Android platform, and provides efficient memory management and serialization algorithms that can improve app performance.
+
+
 ## Architecture
 
 Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
@@ -426,6 +433,8 @@ Heap dump can be used to identify memory issues
 
 StrictMode: a developer tool in Android that helps identify potential performance and threading issues in an application, by detecting violations of certain rules that are known to cause performance problems, such as disk access on the main thread, network access on the main thread, and long-running operations on the UI thread.
 
+How to debug database in an app: Database Inspector can be used to do CRUD and run custom quaries to the database
+
 # Development
 
 Gradle: a build automation tool that is used to build, test, and package Android apps. It provides a flexible and powerful build system that can be used to automate complex build tasks and manage dependencies. It provides:
@@ -484,7 +493,7 @@ DEX: "Dalvik Executable" is a file format used by the Android operating system t
 
 Multidex: a mechanism provided by Android to overcome limitation of 65,536 method references. It allows apps to have multiple DEX files, each containing a subset of the app's method references. When the app is run, the Android runtime loads all the DEX files and combines them into a single Dalvik Virtual Machine (VM) instance.
 
-How to debug database in an app: Database Inspector can be used to do CRUD and run custom quaries to the database
+AAPT2: Android Asset Packaging Tool 2, provided by the Android SDK that is used to package and optimize Android app resources, such as images, layouts, and other assets.
 
 # Programming basics
 
@@ -507,9 +516,9 @@ Abstract class: can only inherit 1 abstract class, has constructors. Used when a
 
 Serialization: a process of translating a data structure or object state into a format that can be stored or transmitted
 
-Serializable: relys on reflection so it takes hit in performance
+Serializable: easy to use and is built into Java, as it requires no additional code to be written, but it can be slower and less memory-efficient than Parcelable. Serializable also creates a lot of temporary objects during the serialization process, which can impact performance.
 
-Parcelable: does not rely on reflection so it is faster than `Serializable`, more complex to implement. However with `@Parcelize` annotation in kotlinx,  `Parcelable` methods will be generated automatically
+Parcelable: Android-specific interface that allows an object to be flattened into a parcel and reconstructed later. Parcelable is faster and more memory-efficient than Serializable, as it creates fewer temporary objects during the serialization process. However, Parcelable requires more boilerplate code to be written compared to Serializable. Fortunately, with `@Parcelize` annotation in kotlinx, `Parcelable` methods will be generated automatically
 
 Both `Serializable` and `Parcelable` are used to transfer data between screens, usually via `Bundle`
 
