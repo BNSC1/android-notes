@@ -340,6 +340,8 @@ Doze: reduces battery usage by putting the device into a deep sleep state when i
 
 App Standby: restricts the background activity of apps that have not been used for a certain amount of time. When an app is in standby mode, it is not allowed to run background processes, receive push notifications, or use the network.
 
+`ComponentActivity.onTrimMemory()`: Called when the operating system has determined that it is a good time for a process to trim unneeded memory from its process. This will happen for example when it goes in the background and there is not enough memory to keep as many background processes running as desired. 
+
 ## Lifecycle
 
 Activity:
