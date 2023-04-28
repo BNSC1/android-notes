@@ -113,6 +113,16 @@ Bundle class is commonly used for passing data between activities, fragments, an
 
 `LiveData`: a class in the Android Jetpack library that is a lifecycle-aware observable data holder class, which means that it allows you to observe changes to a data source and automatically update the UI when the data changes.
 
+`Palette` can extract prominent color of an image
+
+`SpannableString`: allows you to apply formatting, styling, and other decorations to a portion of a text string. It is a subclass of CharSequence, which means that it can be used anywhere that a regular string is used.
+
+`Spannable`: an interface that allows you to apply one or more formatting or styling "spans" to a portion of a text. A Spannable is similar to a SpannableString, but it is more general in that it can be applied to any class that implements the CharSequence interface.
+
+`SharedPreferences` is a mechanism for storing key-value pairs of data in a persistent storage
+- `commit()` writes the changes synchronously to the disk, blocking the calling thread until the write operation has completed. Means it can cause delay to UI thread.
+- `apply()` writes the changes asynchronously to the disk, without blocking the calling thread. Means that the apply operation is a non-blocking operation and does not cause any delay in the UI thread. The changes made with `apply()` are also guaranteed to be eventually persisted to disk, even if the app is killed before the operation is completed.
+
 ## Architecture
 
 Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
