@@ -334,6 +334,12 @@ Bitmap Pool enables the reuse of bitmaps, effectively lowering frequency of GC
 
 Image-loading libraries utilize this to load bitmaps more effectively, they also downscale images just enough to fit into a view to avoid excessive memory usage
 
+overdraw: process of drawing the same pixel multiple times in a single frame, which can lead to performance issues and unnecessary battery drain.
+
+Doze: reduces battery usage by putting the device into a deep sleep state when it is not being used, and only allowing essential background processes to run at specific intervals.
+
+App Standby: restricts the background activity of apps that have not been used for a certain amount of time. When an app is in standby mode, it is not allowed to run background processes, receive push notifications, or use the network.
+
 ## Lifecycle
 
 Activity:
