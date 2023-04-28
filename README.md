@@ -694,21 +694,21 @@ Annotation: allows you to add metadata, or information about code, to your progr
 Annotation processing: allows compile-time code generation for annotated classes/methods, in order to simpify development
 
 Annotation retention: specifies how long an annotation should be retained, or kept, by the JVM, available retention policies are:
-- RetentionPolicy.SOURCE: Annotations with this retention policy are only retained in the source code and are discarded by the compiler during the compilation process. They are not available at runtime.
-- RetentionPolicy.CLASS: Annotations with this retention policy are retained in the compiled class file but are not available at runtime. This is the default retention policy if no retention policy is specified.
-- RetentionPolicy.RUNTIME: Annotations with this retention policy are retained in the compiled class file and are available at runtime through reflection. This is the only retention policy that allows you to access annotations at runtime.
+- `RetentionPolicy.SOURCE`: Annotations with this retention policy are only retained in the source code and are discarded by the compiler during the compilation process. They are not available at runtime.
+- `RetentionPolicy.CLASS`: Annotations with this retention policy are retained in the compiled class file but are not available at runtime. This is the default retention policy if no retention policy is specified.
+- `RetentionPolicy.RUNTIME`: Annotations with this retention policy are retained in the compiled class file and are available at runtime through reflection. This is the only retention policy that allows you to access annotations at runtime.
 
 Target element type: specifies the types of elements that an annotation can be applied to. There are several target element types available:
-- ElementType.TYPE: can be applied to classes, interfaces, enums, and annotations.
-- ElementType.FIELD: can be applied to fields, including enum constants.
-- ElementType.METHOD: can be applied to methods.
-- ElementType.PARAMETER: can be applied to parameters of a method or constructor.
-- ElementType.CONSTRUCTOR: can be applied to constructors.
-- ElementType.LOCAL_VARIABLE: can be applied to local variables.
-- ElementType.ANNOTATION_TYPE: can be applied to annotations.
-- ElementType.PACKAGE: can be applied to packages.
-- ElementType.TYPE_PARAMETER: can be applied to the type parameter of a generic class, interface, method, or constructor.
-- ElementType.TYPE_USE: can be applied to any type use, such as casting, instanceof checks, and method references.
+- `ElementType.TYPE`: can be applied to classes, interfaces, enums, and annotations.
+- `ElementType.FIELD`: can be applied to fields, including enum constants.
+- `ElementType.METHOD`: can be applied to methods.
+- `ElementType.PARAMETER`: can be applied to parameters of a method or constructor.
+- `ElementType.CONSTRUCTOR`: can be applied to constructors.
+- `ElementType.LOCAL_VARIABLE`: can be applied to local variables.
+- `ElementType.ANNOTATION_TYPE`: can be applied to annotations.
+- `ElementType.PACKAGE`: can be applied to packages.
+- `ElementType.TYPE_PARAMETER`: can be applied to the type parameter of a generic class, interface, method, or constructor.
+- `ElementType.TYPE_USE`: can be applied to any type use, such as casting, instanceof checks, and method references.
 
 
 Creating an annotation class in Kotlin: 
