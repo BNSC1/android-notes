@@ -111,6 +111,7 @@ Bundle class is commonly used for passing data between activities, fragments, an
 3. Compatibility: Bundle is a standard Android class that is widely used across the Android platform. This means that other components, such as system services and third-party libraries, are designed to work with Bundle, which can improve compatibility and reduce the risk of errors.
 4. Performance: Bundle is optimized for performance in the Android platform, and provides efficient memory management and serialization algorithms that can improve app performance.
 
+`LiveData`: a class in the Android Jetpack library that is a lifecycle-aware observable data holder class, which means that it allows you to observe changes to a data source and automatically update the UI when the data changes.
 
 ## Architecture
 
