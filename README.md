@@ -185,6 +185,22 @@ OkHttp Interceptor can cache network data so the app is still usable offline, it
 
 Multipart request: a type of HTTP request that allows you to send multiple types of data in a single request. This is useful when you need to upload files or send a form with both text and binary data.
 
+gRPC: a framework for communication with Protocol Buffer
+
+- Channel: creates a connection to the server, required by Stub creation
+
+- Stub: calls methods defined in the proto files
+
+gRPC is a new take on an old approach known as RPC (Remote Procedure Call), a form of inter-process communication essentially used for client-server interactions. The client can request to execute a procedure on the server as if it were a normal local procedure call thanks to the stub generated for both client and server.
+
+REST API: there are clients and a server, clients send HTTP request in methods GET/POST/PUT/DELETE to the server, and the server responds in a standard format, usually JSON
+
+JSON: widely used in web development and data exchange between systems. JSON is human-readable and easy to parse and generate using built-in libraries in most programming languages. JSON does not require a schema. However, JSON is less efficient in terms of performance and memory usage than binary formats like FlatBuffers, and requires parsing and validation at runtime.
+
+Protocol Buffers: aka protobuf. It uses a schema to define the data structure, which is written in a language-independent format called the Protocol Buffer Language. The schema is used to generate code in various programming languages to read and write the data in a strongly-typed, type-safe manner. Protocol Buffers supports many data types, including integers, floats, doubles, strings, booleans, and enums.
+
+FlatBuffers: uses a schema to define the data structure and generates code to read and write the data in a strongly-typed, type-safe manner. FlatBuffers does not require parsing or validation at runtime, which makes it faster and more memory efficient than text-based formats like JSON.
+
 ## View
 
 `View`: superclass for all UI components
@@ -862,28 +878,6 @@ Espresso: a testing framework for Android that allows writeing automated tests f
 `RuleChain` is needed when multiple rules are in a test class e.g. `@get:Rule val rules = RuleChain.outerRule(ruleA).around(ruleB)`
 
 # Network
-
-gRPC: a framework for communication with Protocol Buffer
-
-Channel: creates a connection to the server, required by Stub creation
-
-Stub: calls methods defined in the proto files
-
-Unlike JSON, however, protocol buffers are more than a serialized format. They include three other major parts:
-
-- A contract definition language found in .proto files
-
-- Generated accessor-function code
-
-- Language-specific runtime libraries
-
-gRPC is a new take on an old approach known as RPC (Remote Procedure Call), a form of inter-process communication essentially used for client-server interactions. The client can request to execute a procedure on the server
-
-as if it were a normal local procedure call thanks to the stub generated for both client and server.
-
-Multipart is a feature in most email clients that allows you to include multiple pieces of text in a single message
-
-REST API: there are clients and a server, clients send HTTP request in methods GET/POST/PUT/DELETE to the server, and the server responds in a standard format, usually JSON
 
 OSI Model: Describes how each communication protocol works together to enable communication between 2 devices
 
