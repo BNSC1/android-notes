@@ -101,6 +101,10 @@ How to increase the Notification delivery rate in android?:
 
 In `LiveData`, `setValue()` must be called from main thread, while `postValue()` can be used to update from background thread, however if it is invoked multiple times before the main thread executes, only the latest posted value may be observed
 
+Android Support Library: a collection of libraries that provide backward-compatible versions of Android framework APIs as well as additional features and utilities that are not included in the framework. It was introduced to help developers build apps that work across different versions of Android and provide a consistent user experience on all devices.
+
+Multitouch can be handled with `MotionEvent`, `pointerCount` is used to get the number of touch points currently on the screen, and a loop is used to retrieve the position of each touch point using the getX() and getY() methods.
+
 ## Architecture
 
 Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
@@ -633,6 +637,26 @@ Java memory model defines two types of memory:
 - Stack is a memory region where each thread has its own stack frame. A stack frame contains information about method calls, local variables, and other data specific to a particular thread. When a thread calls a method, a new stack frame is created for that method. When the method completes, the stack frame is removed. The Stack is used to store primitive types and object references, and is not shared between threads.
 
 `Iterator`: an interface that is used to traverse through collections of objects, such as `ArrayList`, `LinkedList`, and `HashSet`. The `Iterator` provides a way to iterate over the collection and access its elements one by one without exposing the underlying data structure of the collection.
+
+Creating an annotation class in Kotlin: 
+1. define a new annotation class e.g. `annotation class MyAnnotation(val value: String)`
+2. `@Retention` and `@Target` annotations are used to specify the annotation retention policy and target element type, respectively.
+```
+@Retention(AnnotationRetention.RUNTIME)
+@Target(AnnotationTarget.CLASS)
+annotation class MyAnnotation(val value: String)
+```
+3. use the custom annotation
+```
+@MyAnnotation("Hello, World!")
+class MyClass
+```
+4. retrieve the annotation and its value from `MyClass` at runtime
+```
+val annotation = MyClass::class.annotations.find { it.annotationClass == MyAnnotation::class }
+val value = (annotation as? MyAnnotation)?.value
+```
+
 
 ### Coroutines
 
