@@ -340,7 +340,14 @@ Doze: reduces battery usage by putting the device into a deep sleep state when i
 
 App Standby: restricts the background activity of apps that have not been used for a certain amount of time. When an app is in standby mode, it is not allowed to run background processes, receive push notifications, or use the network.
 
-`ComponentActivity.onTrimMemory()`: Called when the operating system has determined that it is a good time for a process to trim unneeded memory from its process. This will happen for example when it goes in the background and there is not enough memory to keep as many background processes running as desired. 
+`onTrimMemory()` is a method in the Android Activity and Application classes that is called when the system is low on memory and needs to reclaim resources. The method provides a way for developers to release resources and reduce memory usage in response to system memory pressure. The method takes an integer parameter that indicates the level of memory trimming that the system is requesting:
+- TRIM_MEMORY_COMPLETE: the system is in a critical low-memory state, and the application should release as many resources as possible to avoid being killed.
+- TRIM_MEMORY_MODERATE: the system is in a moderate low-memory state, and the application should release some resources to avoid being killed.
+- TRIM_MEMORY_BACKGROUND: the system is in a low-memory state and the application is running in the background. The application should release resources that are not essential to its operation.
+- TRIM_MEMORY_UI_HIDDEN: the application's UI is no longer visible to the user, and the application should release resources that are not needed for background tasks.
+- TRIM_MEMORY_RUNNING_MODERATE: the system is in a moderate low-memory state and the application is still running, but the resources it consumes should be reduced.
+- TRIM_MEMORY_RUNNING_LOW: the system is in a low-memory state and the application is still running, but the resources it consumes should be reduced.
+- TRIM_MEMORY_RUNNING_CRITICAL: the system is in a critical low-memory state, and the application should release as many resources as possible to avoid being killed.
 
 ## Lifecycle
 
