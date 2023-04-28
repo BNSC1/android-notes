@@ -494,6 +494,8 @@ Android App Bundle: If an AAB is uploaded to Google Play, it will provide optimi
 
 DEX: "Dalvik Executable" is a file format used by the Android operating system to execute compiled code. The DEX format is optimized for Android's virtual machine, the Dalvik Virtual Machine (DVM), which is designed to run on resource-limited devices such as smartphones and tablets.
 
+Android runtime: the DEX file is loaded into memory and executed by either the Dalvik or ART runtime environment. The runtime environment translates the DEX bytecode into machine code that can be executed by the device's processor.
+
 Multidex: a mechanism provided by Android to overcome limitation of 65,536 method references. It allows apps to have multiple DEX files, each containing a subset of the app's method references. When the app is run, the Android runtime loads all the DEX files and combines them into a single Dalvik Virtual Machine (VM) instance.
 
 AAPT2: Android Asset Packaging Tool 2, provided by the Android SDK that is used to package and optimize Android app resources, such as images, layouts, and other assets.
