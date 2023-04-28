@@ -567,12 +567,6 @@ label in Kotlin: used to declare which loop to break/continue in a for loop
 
 Overloading: methods have the same name but different signatures e.g. parameters
 
-Kapt: generate annotation for Kotlin
-
-Annotation: embed supplemental information to the source
-
-Annotation processing: allows compile-time code generation for annotated classes/methods, in order to simpify development
-
 `data class`: some utility functions are created by Kotlin if it is marked data class:
 
 `sealed class`: forces to add remaining branches while the referenced sealed class object is in when()
@@ -638,6 +632,30 @@ Java memory model defines two types of memory:
 
 `Iterator`: an interface that is used to traverse through collections of objects, such as `ArrayList`, `LinkedList`, and `HashSet`. The `Iterator` provides a way to iterate over the collection and access its elements one by one without exposing the underlying data structure of the collection.
 
+Kapt: generate annotation for Kotlin
+
+Annotation: allows you to add metadata, or information about code, to your program. Annotations provide a way to associate information with a program element, such as a class, method, variable, or parameter, without affecting its runtime behavior.
+
+Annotation processing: allows compile-time code generation for annotated classes/methods, in order to simpify development
+
+Annotation retention: specifies how long an annotation should be retained, or kept, by the JVM, available retention policies are:
+- RetentionPolicy.SOURCE: Annotations with this retention policy are only retained in the source code and are discarded by the compiler during the compilation process. They are not available at runtime.
+- RetentionPolicy.CLASS: Annotations with this retention policy are retained in the compiled class file but are not available at runtime. This is the default retention policy if no retention policy is specified.
+- RetentionPolicy.RUNTIME: Annotations with this retention policy are retained in the compiled class file and are available at runtime through reflection. This is the only retention policy that allows you to access annotations at runtime.
+
+Target element type: specifies the types of elements that an annotation can be applied to. There are several target element types available:
+- ElementType.TYPE: can be applied to classes, interfaces, enums, and annotations.
+- ElementType.FIELD: can be applied to fields, including enum constants.
+- ElementType.METHOD: can be applied to methods.
+- ElementType.PARAMETER: can be applied to parameters of a method or constructor.
+- ElementType.CONSTRUCTOR: can be applied to constructors.
+- ElementType.LOCAL_VARIABLE: can be applied to local variables.
+- ElementType.ANNOTATION_TYPE: can be applied to annotations.
+- ElementType.PACKAGE: can be applied to packages.
+- ElementType.TYPE_PARAMETER: can be applied to the type parameter of a generic class, interface, method, or constructor.
+- ElementType.TYPE_USE: can be applied to any type use, such as casting, instanceof checks, and method references.
+
+
 Creating an annotation class in Kotlin: 
 1. define a new annotation class e.g. `annotation class MyAnnotation(val value: String)`
 2. `@Retention` and `@Target` annotations are used to specify the annotation retention policy and target element type, respectively.
@@ -656,7 +674,9 @@ class MyClass
 val annotation = MyClass::class.annotations.find { it.annotationClass == MyAnnotation::class }
 val value = (annotation as? MyAnnotation)?.value
 ```
+ArrayMap: an Android-specific data structure that implements the Map interface and uses arrays to store key-value pairs. ArrayMap provides similar performance to HashMap for small and medium-sized data sets, but is more memory efficient for larger data sets.
 
+SparseArray an Android-specific data structure that implements the Map interface and uses arrays to store key-value pairs, but is specialized for integer keys. SparseArray is optimized for memory usage and is more memory efficient than HashMap and ArrayMap for data sets with integer keys. SparseArray provides constant-time performance for most operations, but may be slower than HashMap and ArrayMap for data sets with non-integer keys.
 
 ### Coroutines
 
