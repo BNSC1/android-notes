@@ -318,6 +318,8 @@ What is Garbage Collection?: reclaiming runtime memory by destroying unreference
 
 How does Garbage Collection work?: mark roots(objects referenced by static fields, application class, live thread)->mark referenced objects->mark reachable objects->GC unreachable objects
 
+`System.gc()` is used to perform manual garbage collection
+
 Why use Jetpack?: a set of libraries that provide backward compatibility and best practices
 
 R8: trims class/function name, remove unused methods, and merge code only used once
@@ -703,6 +705,8 @@ val value = (annotation as? MyAnnotation)?.value
 ArrayMap: an Android-specific data structure that implements the Map interface and uses arrays to store key-value pairs. ArrayMap provides similar performance to HashMap for small and medium-sized data sets, but is more memory efficient for larger data sets.
 
 SparseArray an Android-specific data structure that implements the Map interface and uses arrays to store key-value pairs, but is specialized for integer keys. SparseArray is optimized for memory usage and is more memory efficient than HashMap and ArrayMap for data sets with integer keys. SparseArray provides constant-time performance for most operations, but may be slower than HashMap and ArrayMap for data sets with non-integer keys.
+
+
 
 ### Coroutines
 
