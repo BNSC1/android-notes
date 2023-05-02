@@ -132,6 +132,12 @@ Ways to interact with other apps in Android:
 - [Package visibility filtering on Android] (https://developer.android.com/training/basics/intents/package-visibility)
 - [Fulfill common use cases while having limited package visibility] (https://developer.android.com/training/basics/intents/package-visibility-use-cases)
 
+`AlarmManager`: a system service in Android that allows you to schedule tasks to run at specific times or intervals. `AlarmManager` is commonly used to schedule tasks that need to run in the background even when the app is not currently running. With `AlarmManager`, you can schedule a task to run at a specific time, such as an alarm clock app that needs to ring at a certain time. You can also schedule a task to run at a specific interval, such as a weather app that needs to update the weather forecast every hour.
+
+`JobScheduler`: a system service introduced in Android 5.0 (API level 21) that allows you to schedule background tasks at specific times or in response to specific events. JobScheduler is an alternative to the `AlarmManager` service, which is used for scheduling tasks at specific times. It is designed to optimize the use of system resources, such as battery and network, by batching jobs together and scheduling them at the most appropriate time. `JobScheduler` allows you to define constraints on when a job should run, such as the device being idle, charging, or connected to a Wi-Fi network.
+
+
+
 ## Architecture
 
 Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
