@@ -123,6 +123,8 @@ Bundle class is commonly used for passing data between activities, fragments, an
 - `commit()` writes the changes synchronously to the disk, blocking the calling thread until the write operation has completed. Means it can cause delay to UI thread.
 - `apply()` writes the changes asynchronously to the disk, without blocking the calling thread. Means that the apply operation is a non-blocking operation and does not cause any delay in the UI thread. The changes made with `apply()` are also guaranteed to be eventually persisted to disk, even if the app is killed before the operation is completed.
 
+9-patch image: a special type of image file format in Android that allows you to define how the image should be stretched or tiled when displayed in different screen sizes or resolutions. A nine-patch image consists of a regular Bitmap with an additional 1-pixel border around it, which defines how the image should be stretched or tiled.
+
 ## Architecture
 
 Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
