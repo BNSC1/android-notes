@@ -368,6 +368,8 @@ App Standby: restricts the background activity of apps that have not been used f
 - TRIM_MEMORY_RUNNING_LOW: the system is in a low-memory state and the application is still running, but the resources it consumes should be reduced.
 - TRIM_MEMORY_RUNNING_CRITICAL: the system is in a critical low-memory state, and the application should release as many resources as possible to avoid being killed.
 
+Running blocking tasks in UI thread should be avoided as it will cause UI lag or even ANR, leading to poor user experience
+
 ## Lifecycle
 
 Activity:
