@@ -11,7 +11,9 @@ Activity: entry point for user interaction e.g. track what is on the screen
 
 `IntentService`: a subclass of `Service` that provides a simple way to perform long-running tasks in the background. An `IntentService` runs in a separate thread, so it does not block the main UI thread, and it automatically stops itself when it has completed its work.
 
-Broadcast receivers: gateway for system event
+`BroadcastReceiver`: a component that allows your app to receive and respond to system-wide broadcast events or custom broadcast events that are sent from other apps or from the system itself.
+
+`LocalBroadcastManager`: a helper class that allows your app to send and receive broadcast messages within the same app. A `LocalBroadcastManager` is a subclass of the abstract class `BroadcastReceiver`, and it is used to create a private communication channel for your app that is not visible to other apps on the device.
 
 There are 2 types of broadcasts:
 - Normal Broadcasts: A normal broadcast is a broadcast in which the system delivers the broadcast to all interested receivers without any particular order. Normal broadcasts are asynchronous, so the broadcast is sent to all receivers at the same time and the order in which they receive it is not guaranteed. Normal broadcasts are useful when you want to notify multiple components of an event, such as when the battery is low or when an SMS message is received.
@@ -26,11 +28,13 @@ Content providers: provide an API to share data with other apps, sharing can be 
 
 Intent: an asynchronous message which activates Activities, Services, and Broadcast receivers
 
-- Explicit Intent: specify which activity will handle this action
+- Explicit Intent: specify which component will handle this action
 
-- Implicit Intent: specify what action to be handled by activities
+- Implicit Intent: specify what action to be handled by components
 
 - Sticky Intent: still exists after broadcasting, allowing other components to collect data
+
+`PendingIntent`: a token that you can use to give another application permission to perform an operation on your app's behalf. A `PendingIntent` is typically created by the current app and passed to another app that you want to grant permission to perform an operation.
 
 Module: a collection of source files and build settings to divide the project for discrete functionality
 
@@ -40,7 +44,7 @@ Module: a collection of source files and build settings to divide the project fo
 
 - `manifestPlaceholders`: creates "variables" to be used in `AndroidManifest.xml`
 
-- `<intent-filter>`: specifies the types of intents components can respond to
+- `<intent-filter>`: a component that is used to specify the types of Intent messages that a component can receive or respond to. An `IntentFilter` is used to filter the incoming Intents and determine which component should handle the Intent.
 
 - launchMode:
 
