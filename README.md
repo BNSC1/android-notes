@@ -166,6 +166,14 @@ Key differences between `Dialog` and `DialogFragment`:
 
 `Toast`: a UI component that displays a short message to the user, typically to provide some kind of feedback or notification. A `Toast` is a lightweight component that appears as a floating message on the screen and disappears after a short period of time.
 
+`SnapHelper`: a helper class that helps to implement snapping behavior in a `RecyclerView`. Snapping behavior refers to the behavior of automatically scrolling the RecyclerView to the nearest view when the user stops scrolling.
+
+Working with touch control:
+- When working on touch events we start by clicking a view and removing the gesture (in our case our finger/stylus) then `MotionEvent.ACTION_DOWN` and `MotionEvent.ACTION_UP` is called respectively.
+- When the initial touch happens on the `ViewGroup` and after intercepting when it moves to the child, then `MotionEvent.ACTION_CANCEL` gets called on the `ViewGroup` and the touch event dispatches to the children.
+- Now, everything depends on `onInterceptTouchEvent()` and its return value. Based on its return value the `dispatchTouchEvent` is dependent, that if returns true the dispatcher is canceled, and if it returns false then the dispatching of the touch event keeps going on until its used. It follows Chain of Responsibility pattern.
+- And `onTouchEvent()` if the return value is true, then it means the touch is handled and if it returns false then it means the touch is not handled.
+
 ## Architecture
 
 Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
