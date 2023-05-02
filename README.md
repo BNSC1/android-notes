@@ -153,7 +153,18 @@ Ways to interact with other apps in Android:
 
 `JobScheduler`: a system service introduced in Android 5.0 (API level 21) that allows you to schedule background tasks at specific times or in response to specific events. JobScheduler is an alternative to the `AlarmManager` service, which is used for scheduling tasks at specific times. It is designed to optimize the use of system resources, such as battery and network, by batching jobs together and scheduling them at the most appropriate time. `JobScheduler` allows you to define constraints on when a job should run, such as the device being idle, charging, or connected to a Wi-Fi network.
 
+`Snackbar`: a UI component that displays a short message to the user, typically to provide a brief feedback or notification. A `Snackbar` is similar to a `Toast`, but it provides more options for user interaction and can be customized to suit your app's design.
 
+`Dialog`: a UI component that displays a popup window to the user, typically to provide some kind of information or to request user input. A `Dialog` can be created using the `AlertDialog` class or by creating a custom `Dialog` class.
+
+`DialogFragment`: a subclass of the Fragment class that provides a way to display a `Dialog` as a fragment within an `Activity`. A `DialogFragment` can be used to display a `Dialog` that is persistent across configuration changes, such as screen rotation, and it provides a number of benefits over using a regular `Dialog`.
+
+Key differences between `Dialog` and `DialogFragment`:
+- Lifespan and Configuration Changes: A `Dialog` is not tied to the lifecycle of an Activity or Fragment, and it is destroyed when the user dismisses it or when the Activity is destroyed. This means that if you need to display a `Dialog` in response to a configuration change, such as a screen rotation, you need to handle the state saving and restoring yourself. In contrast, a `DialogFragment` is tied to the lifecycle of the host `Activity` or `Fragment`, and it is automatically destroyed and recreated when the configuration changes. This makes it easier to handle state saving and restoring, and it ensures that the `DialogFragment` is displayed correctly after the configuration change.
+- Customization: While a `Dialog` is customizable, it can be more difficult to customize than a `DialogFragment`, especially if you need to create a custom layout or behavior. With `DialogFragment`, you can easily create a custom layout, add custom behavior, and respond to user input using methods like `onDialogPositiveClick()` and `onDialogNegativeClick()`.
+- Reusability: `DialogFragments` can be reused across multiple `Activities` and `Fragment`s, which can be useful if you need to display the same `Dialog` in multiple places within your app. With `Dialog`s, you need to create a new instance of the `Dialog` each time you want to display it.
+
+`Toast`: a UI component that displays a short message to the user, typically to provide some kind of feedback or notification. A `Toast` is a lightweight component that appears as a floating message on the screen and disappears after a short period of time.
 
 ## Architecture
 
@@ -263,7 +274,7 @@ FlatBuffers: uses a schema to define the data structure and generates code to re
 
 How `RecyclerView` works?: The Adapter binds views and then passes them to the Layout Manager, the RecyclerView only allocates fixed numbers of views that fit the screen.  When a view is out of sight it becomes a scrap view and is temporary detached to the recycle pool, when the next items need to be displayed, it is reused by passing new data into the view and then is returned to the viewHolder as "dirty view"
 
-Why use `RecyclerView` over `ListView`?: `ListView` creates as many views as data count in a dataset, with no built-support for animation, only vertical scroll
+Why use `RecyclerView` over `ListView`?: `ListView` creates as many views as data count in a dataset, with no built-support for animation, only vertical scroll, no support for LayoutManager
 
 `RecyclerView` consists of:
 
