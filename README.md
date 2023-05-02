@@ -425,6 +425,8 @@ Running blocking tasks in UI thread should be avoided as it will cause UI lag or
 
 `android:process` in `AndroidManifest` allows an app running in multiple processes
 
+`RecycledViewPool` may improve performance of a nested `RecyclerView` if `RecyclerView`s items are using similar layout
+
 ## Lifecycle
 
 Activity:
