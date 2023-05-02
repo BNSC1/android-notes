@@ -168,11 +168,16 @@ Key differences between `Dialog` and `DialogFragment`:
 
 `SnapHelper`: a helper class that helps to implement snapping behavior in a `RecyclerView`. Snapping behavior refers to the behavior of automatically scrolling the RecyclerView to the nearest view when the user stops scrolling.
 
+The flow on the view happens is when we want to tap the button:
+`Activity` -> `dispatchTouchEvent` (LinearLayout) -> `dispatchTouchEvent` (Button) -> `onTouchEvent` (Button). 
+
 Working with touch control:
 - When working on touch events we start by clicking a view and removing the gesture (in our case our finger/stylus) then `MotionEvent.ACTION_DOWN` and `MotionEvent.ACTION_UP` is called respectively.
 - When the initial touch happens on the `ViewGroup` and after intercepting when it moves to the child, then `MotionEvent.ACTION_CANCEL` gets called on the `ViewGroup` and the touch event dispatches to the children.
 - Now, everything depends on `onInterceptTouchEvent()` and its return value. Based on its return value the `dispatchTouchEvent` is dependent, that if returns true the dispatcher is canceled, and if it returns false then the dispatching of the touch event keeps going on until its used. It follows Chain of Responsibility pattern.
 - And `onTouchEvent()` if the return value is true, then it means the touch is handled and if it returns false then it means the touch is not handled.
+
+If a `ViewGroup`'s `onInterceptTouchEvent()` returns false, the touch event is passed down to its child `View`s for further handling.
 
 ## Architecture
 
