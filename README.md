@@ -166,19 +166,6 @@ Key differences between `Dialog` and `DialogFragment`:
 
 `Toast`: a UI component that displays a short message to the user, typically to provide some kind of feedback or notification. A `Toast` is a lightweight component that appears as a floating message on the screen and disappears after a short period of time.
 
-`SnapHelper`: a helper class that helps to implement snapping behavior in a `RecyclerView`. Snapping behavior refers to the behavior of automatically scrolling the RecyclerView to the nearest view when the user stops scrolling.
-
-The flow on the view happens is when we want to tap the button:
-`Activity` -> `dispatchTouchEvent` (LinearLayout) -> `dispatchTouchEvent` (Button) -> `onTouchEvent` (Button). 
-
-Working with touch control:
-- When working on touch events we start by clicking a view and removing the gesture (in our case our finger/stylus) then `MotionEvent.ACTION_DOWN` and `MotionEvent.ACTION_UP` is called respectively.
-- When the initial touch happens on the `ViewGroup` and after intercepting when it moves to the child, then `MotionEvent.ACTION_CANCEL` gets called on the `ViewGroup` and the touch event dispatches to the children.
-- Now, everything depends on `onInterceptTouchEvent()` and its return value. Based on its return value the `dispatchTouchEvent` is dependent, that if returns true the dispatcher is canceled, and if it returns false then the dispatching of the touch event keeps going on until its used. It follows Chain of Responsibility pattern.
-- And `onTouchEvent()` if the return value is true, then it means the touch is handled and if it returns false then it means the touch is not handled.
-
-If a `ViewGroup`'s `onInterceptTouchEvent()` returns false, the touch event is passed down to its child `View`s for further handling.
-
 ## Architecture
 
 Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
@@ -277,13 +264,15 @@ FlatBuffers: uses a schema to define the data structure and generates code to re
 
 ## View
 
-`View`: superclass for all UI components
+`View`: the basic building blocks of UI elements in Android. `View` is a simple rectangle box which responds to the user’s actions. Superclass for all UI components
 
-`ViewGroup`: a parent to hold children e.g. `LinearLayout` with `TextView` and Button
+`ViewGroup`: a parent to hold children e.g. `LinearLayout` with `TextView` and `Button`
 
-`Canvas`: What to draw
+`Canvas`: provides a 2D drawing surface for custom view elements. It is used to draw graphics, text, and other visual elements onto a `View` object.
 
-`Paint`: How to draw
+`Paint`: provides styling and color information for drawing operations on a `Canvas`. `Paint` is used to specify the color, stroke width, style, and other attributes of the lines, shapes, and text that are drawn onto a `Canvas`.
+
+`SurfaceView`: provides a dedicated drawing surface for rendering of graphics and video. Unlike other View types in Android, which are drawn in the normal `View` hierarchy, SurfaceView creates a separate drawing surface in which you can perform custom drawing operations.
 
 How `RecyclerView` works?: The Adapter binds views and then passes them to the Layout Manager, the RecyclerView only allocates fixed numbers of views that fit the screen.  When a view is out of sight it becomes a scrap view and is temporary detached to the recycle pool, when the next items need to be displayed, it is reused by passing new data into the view and then is returned to the viewHolder as "dirty view"
 
@@ -298,6 +287,27 @@ Why use `RecyclerView` over `ListView`?: `ListView` creates as many views as dat
 - `ItemAnimator`: defaults to DefaultItemAnimator
 
 - `ViewHolder`: draws for individual items
+
+`SnapHelper`: a helper class that helps to implement snapping behavior in a `RecyclerView`. Snapping behavior refers to the behavior of automatically scrolling the RecyclerView to the nearest view when the user stops scrolling.
+
+The flow on the view happens is when we want to tap the button:
+`Activity` -> `dispatchTouchEvent` (LinearLayout) -> `dispatchTouchEvent` (Button) -> `onTouchEvent` (Button). 
+
+Working with touch control:
+- When working on touch events we start by clicking a view and removing the gesture (in our case our finger/stylus) then `MotionEvent.ACTION_DOWN` and `MotionEvent.ACTION_UP` is called respectively.
+- When the initial touch happens on the `ViewGroup` and after intercepting when it moves to the child, then `MotionEvent.ACTION_CANCEL` gets called on the `ViewGroup` and the touch event dispatches to the children.
+- Now, everything depends on `onInterceptTouchEvent()` and its return value. Based on its return value the `dispatchTouchEvent` is dependent, that if returns true the dispatcher is canceled, and if it returns false then the dispatching of the touch event keeps going on until its used. It follows Chain of Responsibility pattern.
+- And `onTouchEvent()` if the return value is true, then it means the touch is handled and if it returns false then it means the touch is not handled.
+
+If a `ViewGroup`'s `onInterceptTouchEvent()` returns false, the touch event is passed down to its child `View`s for further handling.
+
+Merge layout: a type of layout file in Android that allows you to combine multiple `View`s into a single `View` without introducing an extra level of hierarchy. Merge layouts can be used to improve performance by reducing the depth of the `View` hierarchy.
+
+Tips on how to optimize the depth of the `View` tree:
+- Use Flat View Hierarchies: Whenever possible, try to use a flat view hierarchy by using fewer nesting levels. This can be achieved by using layout containers such as `ConstraintLayout` or `RelativeLayout`, which allow you to position `Views` relative to each other without the need for nested layouts.
+- Use `ViewStub`: `ViewStub` is a lightweight `View` that is used to lazily inflate Views. Instead of including `View`s directly in the layout, you can use `ViewStub` to include `View`s only when they are needed. This can help reduce the depth of the `View` tree and improve performance.
+- Use Merge Layouts: Merge layouts allow you to combine multiple Views into a single View, which can help reduce the depth of the View tree. Merge layouts are particularly useful for reusable components that are used in multiple places in the layout hierarchy.
+- Optimize Layouts: Avoid using complex layouts or nested layouts that are not necessary. Instead, use simpler layouts and optimize their performance by using techniques such as layout caching, recycling, and minimizing the number of `View`s that need to be measured and laid out.
 
 Mipmaps are used for icons, every resolution of them is used in case the launcher needs to display larger icon
 
