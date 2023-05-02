@@ -125,6 +125,13 @@ Bundle class is commonly used for passing data between activities, fragments, an
 
 9-patch image: a special type of image file format in Android that allows you to define how the image should be stretched or tiled when displayed in different screen sizes or resolutions. A nine-patch image consists of a regular Bitmap with an additional 1-pixel border around it, which defines how the image should be stretched or tiled.
 
+Ways to interact with other apps in Android:
+- [Sending the user to another app] (https://developer.android.com/training/basics/intents/sending)
+- [Get a result from an activity] (https://developer.android.com/training/basics/intents/result)
+- [Allow other apps to start your activity] (https://developer.android.com/training/basics/intents/filters)
+- [Package visibility filtering on Android] (https://developer.android.com/training/basics/intents/package-visibility)
+- [Fulfill common use cases while having limited package visibility] (https://developer.android.com/training/basics/intents/package-visibility-use-cases)
+
 ## Architecture
 
 Model: models, local/remove data source and repository. Represents the data and the business logic of the Android Application.
