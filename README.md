@@ -342,6 +342,13 @@ Memory Leak: unused objects GC is unable to clear
 
 Bitmap Pool enables the reuse of bitmaps, effectively lowering frequency of GC
 
+To handle bitmaps efficiently in Android:
+- Use `BitmapFactory.Options` to reduce the memory usage of bitmaps: `BitmapFactory.Options` is a class that provides several options for decoding bitmaps. By setting the `inSampleSize` option to a value greater than 1, you can reduce the memory usage of bitmaps, at the cost of image quality.
+- Use the `Bitmap.Config` options to reduce memory usage: The `Bitmap.Config` options allow you to specify the color format and bit depth of the bitmap. By using a lower bit depth or color format, you can reduce the memory usage of bitmaps.
+- Load bitmaps asynchronously using a background thread: Loading bitmaps on the main thread can cause the app to freeze and lead to ANR. Instead, you can use a background thread to load bitmaps asynchronously. You can use the `AsyncTask` class or a `ThreadPoolExecutor` to load bitmaps in the background.
+- Use a memory cache to reuse bitmaps: Reusing bitmaps can reduce memory usage and improve performance. You can use a memory cache to store bitmaps in memory and reuse them when needed. The `LruCache` class is a useful class for implementing a memory cache in Android.
+- Use a disk cache to store bitmaps: If your app loads a large number of bitmaps, you can use a disk cache to store bitmaps on disk. This can help reduce memory usage and improve performance. The `DiskLruCache` library is a useful library for implementing a disk cache in Android.
+
 Image-loading libraries utilize this to load bitmaps more effectively, they also downscale images just enough to fit into a view to avoid excessive memory usage
 
 overdraw: process of drawing the same pixel multiple times in a single frame, which can lead to performance issues and unnecessary battery drain.
