@@ -324,6 +324,18 @@ What Are Modules In Dagger?: installed to that component to allow binding to be 
 
 ## Performance
 
+ANR: Application Not Responding, occurs when:
+- Input dispatching timed out: If your app has not responded to an input event within 5 seconds
+- Executing service: If a service declared by your app cannot finish executing `Service.onCreate()` and `Service.onStartCommand()`/`Service.onBind()` within a few seconds.
+- `Service.startForeground()` not called: If your app uses `Context.startForegroundService()` to start a new service in the foreground, but the service then does not call `startForeground()` within 5 seconds.
+- Broadcast of intent: If a `BroadcastReceiver` hasn't finished executing within a set amount of time. If the app has any activity in the foreground, this timeout is 5 seconds.
+
+ANR can be caused by:
+- Long operation on main thread
+- Deadlocks
+- Infinite loops
+- Slow broadcast receivers
+
 Why does the Android App lag?: when GC occurs, your UI stops updating until GC is done. When there is too much done on the main thread
 
 What is Garbage Collection?: reclaiming runtime memory by destroying unreferenced objects
