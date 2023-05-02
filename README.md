@@ -5,7 +5,11 @@
 Activity: entry point for user interaction e.g. track what is on the screen
 - Activity with transparent background: apply a theme which its `android:windowIsTranslucent` is set to true and its `android:windowBackground` is set to transparent
 
-Service: run in the background e.g. music playback
+`Service`: runs in the background to perform long-running tasks, such as playing music, downloading data, or syncing data with a server. A `Service` does not provide a user interface, and it can run even when the app that started it is no longer in the foreground. There are two types of `Services` in Android:
+- Started `Service`: A Started `Service` is a `Service` that is started by an `Activity` or other component using the `startService()` method. Once started, a Started `Service` continues to run until it completes its work or is stopped by calling `stopService()` or `stopSelf()`.
+- Bound `Service`: A Bound `Service` is a `Service` that is bound to an `Activity` or other component using the `bindService()` method. A Bound `Service` provides a client-server interface that allows the client to interact with the `Service` and perform operations on it. A Bound `Service` continues to run as long as there is at least one client bound to it.
+
+`IntentService`: a subclass of `Service` that provides a simple way to perform long-running tasks in the background. An `IntentService` runs in a separate thread, so it does not block the main UI thread, and it automatically stops itself when it has completed its work.
 
 Broadcast receivers: gateway for system event
 
@@ -126,11 +130,11 @@ Bundle class is commonly used for passing data between activities, fragments, an
 9-patch image: a special type of image file format in Android that allows you to define how the image should be stretched or tiled when displayed in different screen sizes or resolutions. A nine-patch image consists of a regular Bitmap with an additional 1-pixel border around it, which defines how the image should be stretched or tiled.
 
 Ways to interact with other apps in Android:
-- [Sending the user to another app] (https://developer.android.com/training/basics/intents/sending)
-- [Get a result from an activity] (https://developer.android.com/training/basics/intents/result)
-- [Allow other apps to start your activity] (https://developer.android.com/training/basics/intents/filters)
-- [Package visibility filtering on Android] (https://developer.android.com/training/basics/intents/package-visibility)
-- [Fulfill common use cases while having limited package visibility] (https://developer.android.com/training/basics/intents/package-visibility-use-cases)
+- [Sending the user to another app](https://developer.android.com/training/basics/intents/sending)
+- [Get a result from an activity](https://developer.android.com/training/basics/intents/result)
+- [Allow other apps to start your activity](https://developer.android.com/training/basics/intents/filters)
+- [Package visibility filtering on Android](https://developer.android.com/training/basics/intents/package-visibility)
+- [Fulfill common use cases while having limited package visibility](https://developer.android.com/training/basics/intents/package-visibility-use-cases)
 
 `AlarmManager`: a system service in Android that allows you to schedule tasks to run at specific times or intervals. `AlarmManager` is commonly used to schedule tasks that need to run in the background even when the app is not currently running. With `AlarmManager`, you can schedule a task to run at a specific time, such as an alarm clock app that needs to ring at a certain time. You can also schedule a task to run at a specific interval, such as a weather app that needs to update the weather forecast every hour.
 
