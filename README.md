@@ -13,6 +13,15 @@ Activity: entry point for user interaction e.g. track what is on the screen
 
 Broadcast receivers: gateway for system event
 
+There are 2 types of broadcasts:
+- Normal Broadcasts: A normal broadcast is a broadcast in which the system delivers the broadcast to all interested receivers without any particular order. Normal broadcasts are asynchronous, so the broadcast is sent to all receivers at the same time and the order in which they receive it is not guaranteed. Normal broadcasts are useful when you want to notify multiple components of an event, such as when the battery is low or when an SMS message is received.
+- Ordered Broadcasts: An ordered broadcast is a broadcast in which the system sends the broadcast to one receiver at a time, in a specific order. The first receiver to receive the broadcast can abort the broadcast, prevent other receivers from receiving it, or modify the data being broadcasted. Ordered broadcasts are useful when you want to ensure that the broadcast is processed in a specific order, or when you need to modify or filter the data being broadcasted.
+
+There are also 2 categories of broadcasts:
+- System Broadcasts: System broadcasts are predefined by the Android system and are sent by the system when certain events occur, such as when the battery is low or when the device is connected to a charger. System broadcasts cannot be modified or cancelled by the app that receives them.
+- Custom Broadcasts: Custom broadcasts are broadcasts that are defined by the app itself, and are sent using the `sendBroadcast()` or `sendOrderedBroadcast()` methods. Custom broadcasts can be used to notify other components within the same app or in other apps of an event or to communicate data between components.
+
+
 Content providers: provide an API to share data with other apps, sharing can be done by URI
 
 Intent: an asynchronous message which activates Activities, Services, and Broadcast receivers
