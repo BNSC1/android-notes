@@ -389,6 +389,8 @@ App Standby: restricts the background activity of apps that have not been used f
 
 Running blocking tasks in UI thread should be avoided as it will cause UI lag or even ANR, leading to poor user experience
 
+`android:process` in `AndroidManifest` allows an app running in multiple processes
+
 ## Lifecycle
 
 Activity:
