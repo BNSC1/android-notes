@@ -56,14 +56,17 @@ Module: a collection of source files and build settings to divide the project fo
 
     - singleInstance: create a new activity in a new task
 
-Context: context of the state of the app, get info about activity and application, access resources, preferences, room, both Activity, and Application 
-Context
+Context: an abstract class that provides access to application-specific resources and services, such as the system services, preferences, and assets. It represents the current state of the app and provides access to various resources and information about the app environment. Its usages are:
+- Creating views
+- Accessing resources
+- Starting activities
+- Accessing system services
 
 `applicationContext`: for reference by singleton class e.g. room, datastore
 
 `activityContext`: for reference by UI operations e.g. toast, dialog
 
-Application: contains all other components such as activities and services.
+Application: contains all other components such as activities and services. It is instantiated before any other class when the process for your application/package is created.
 
 Fragment: has its layout and its behavior with its lifecycle callbacks, can add or remove fragments in the activity, can combine multiple fragments in an activity, can be reused in multiple activities, the lifecycle is closely related to the lifecycle of its host activity.  Fragment was introduced with Android 3.0, which also introduced tablet support.
 
@@ -91,7 +94,7 @@ Ways to communicate between two fragments:
 
 - When the user hits the system Back button, going from B back to A, the reverse happens: the entering destination A will have the popEnterAnim applied to it and the exiting destination B will have the popExitAnim applied to it.
 
-- Using only the default Fragment constructor is recommended because Android calls a no-argument constructor and it is not aware of others
+- Using only the default Fragment constructor is recommended because Android calls a no-argument constructor after a configuration change, and it is not aware of others
 
 Mipmap folder: for the launcher icon
 
