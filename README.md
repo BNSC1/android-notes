@@ -1117,3 +1117,11 @@ CAP Theorem: A principle that states a distributed database system cannot guaran
 - Partition tolerance
 
 Caching: Store frequently accessed data in a temporary storage location to improve time spent on retrieving data.
+
+Horizontal scaling: aka scaling out, increasing the capacity of a system by adding more machines or nodes to the system. It is commonly used in distributed systems.
+- Pros: less expensive, can provide better fault tolerance and availability
+- Cons: synchronization between nodes increases overhead and complexity
+
+Vertical scaling: aka scaling up, increasing the capacity of a system by upgrading the hardware or software of an existing machine. It is commonly used in systems that have a single point of failure, such as a database or a message queue.
+- Pros: easier to manage, possible better performance
+- Cons: scaling has limit, more expensive
