@@ -1125,3 +1125,9 @@ Horizontal scaling: aka scaling out, increasing the capacity of a system by addi
 Vertical scaling: aka scaling up, increasing the capacity of a system by upgrading the hardware or software of an existing machine. It is commonly used in systems that have a single point of failure, such as a database or a message queue.
 - Pros: easier to manage, possible better performance
 - Cons: scaling has limit, more expensive
+
+Microservices: a collection of small, independent services that communicate with each other through APIs. Each microservice is designed to perform a specific business function, and can be developed, deployed, and scaled independently of the other services in the system. Advantages include:
+- Agility and flexibility: Microservices allow for more flexibility in software development and deployment, since each service can be developed, tested, and deployed independently of the others. This makes it easier to add new features, fix bugs, and scale the system as needed.
+- Scalability and resilience: Microservices can be scaled horizontally to handle increased traffic or workload, and can be designed to be fault-tolerant and resilient to failures. This can help ensure that the system remains available and responsive even in the face of hardware or software failures.
+- Technology diversity: Microservices can be developed and deployed using different technologies and programming languages, which can be better suited to the specific needs and requirements of each service. This can allow for more innovation and experimentation in software development.
+- Team autonomy: Microservices can be developed and maintained by small, cross-functional teams that have ownership and autonomy over their specific services. This can enable faster and more efficient decision-making, and can help avoid dependencies and bottlenecks in the development process.
