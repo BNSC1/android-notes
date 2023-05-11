@@ -1098,6 +1098,14 @@ Steps of system designing:
 
 5. Summarize and answer questions: Summarize design choices and elaborate if the choices justify for the tradeoffs
 
+API notification methods:
+
+- Push notification: pushes a notification to the client from a 3rd-party service
+- Short polling: make a request at regular period
+- Long polling: make a request that the server holds open for a period until an update event, or the request timeout
+- Server-Sent Events: the server monodirectionally notifies events over a stream HTTP connection
+- WebSocket: holds a bidirectional connection which is able to transfer data as well
+
 HTTP: Primary protocol used to transfer data between a web server and a client.
 
 HTTPS: Secured version of HTTP
