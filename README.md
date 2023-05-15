@@ -9,6 +9,8 @@ Activity: entry point for user interaction e.g. track what is on the screen
 - Started `Service`: A Started `Service` is a `Service` that is started by an `Activity` or other component using the `startService()` method. Once started, a Started `Service` continues to run until it completes its work or is stopped by calling `stopService()` or `stopSelf()`.
 - Bound `Service`: A Bound `Service` is a `Service` that is bound to an `Activity` or other component using the `bindService()` method. A Bound `Service` provides a client-server interface that allows the client to interact with the `Service` and perform operations on it. A Bound `Service` continues to run as long as there is at least one client bound to it.
 
+Foreground `Service`: it is visible to the user as a notification, and unlike a normal `Service`, it cannot be stopped by Android even if low on resources, requires the `START_STICKY` flag to restart if terminated
+
 `IntentService`: a subclass of `Service` that provides a simple way to perform long-running tasks in the background. An `IntentService` runs in a separate thread, so it does not block the main UI thread, and it automatically stops itself when it has completed its work.
 
 `BroadcastReceiver`: a component that allows your app to receive and respond to system-wide broadcast events or custom broadcast events that are sent from other apps or from the system itself.
