@@ -877,6 +877,8 @@ Kotlin Coroutines: enables writing in synchronous way, while the code actually r
 
 `Mutex().withLock()`: protect all modifications of the shared state with a critical section that is never executed concurrently
 
+`Semaphore`: a synchronization mechanism that allows a fixed number of threads or coroutines to access a shared resource simultaneously. It maintains a count of the number of permits available, and each thread or coroutine that wants to access the resource has to acquire a permit before proceeding. The permits are released back to the semaphore when the resource is no longer needed, allowing other threads or coroutines to acquire them.
+
 `CoroutineExceptionHandler` only catches unhandled exception, that is, if the block already handles the exception, it will not be triggered
 
 `CoroutineExceptionHandler` has no effect on `async()` because the builder catches and represents the exception in the `Deferred` object
