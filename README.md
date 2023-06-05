@@ -336,6 +336,8 @@ Drawables are used for everything else, only 1 resolution will be used
 
 `sp`: similar to dp except text size preference affects it too
 
+`<plurals>`: XML resource that carries different strings for pluralization
+
 `ConstraintLayout` helpers:
 
 - Chains: a group of views that are linked to each other with bi-directional position constraints, can be used to distribute space between views evenly, eliminating the necessity of `LinearLayout`, they have different modes:
