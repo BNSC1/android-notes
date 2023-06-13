@@ -396,7 +396,7 @@ Drawables are used for everything else, only 1 resolution will be used
 
 `produceState`: convert non-Compose state into Compose state
 
-`derivedStateOf`: convert one or multiple state objects into another state
+`derivedStateOf`: calculate one or multiple state objects into another state
 
 `snapshotFlow`: convert Compose's State into Flows
 
