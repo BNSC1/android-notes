@@ -380,6 +380,26 @@ Drawables are used for everything else, only 1 resolution will be used
 
 - `Group`: a virtual layout which controls visibility of multiple views
 
+## Compose
+
+### Side effects:
+
+`LaunchedEffect`: run suspend functions in the scope of a composable, only when its key changed
+
+`DisposableEffect`: effects that require cleanup
+
+`SideEffect`: publish Compose state to non-compose code
+
+`produceState`: convert non-Compose state into Compose state
+
+`derivedStateOf`: convert one or multiple state objects into another state
+
+`snapshotFlow`: convert Compose's State into Flows
+
+`rememberUpdatedState`: reference a value in an effect that shouldn't restart if the value changes, usually used with `LaunchedEffect` or `DisposableEffect`
+
+`rememberCoroutineScope`: obtain a composition-aware scope to launch a coroutine outside a composable
+
 ## Dependency Injection
 
 Why use dependency injection?: 
