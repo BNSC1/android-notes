@@ -390,6 +390,10 @@ Drawables are used for everything else, only 1 resolution will be used
 
 `SideEffect`: publish Compose state to non-compose code
 
+`rememberCoroutineScope`: obtain a composition-aware scope to launch a coroutine outside a composable
+
+### State:
+
 `produceState`: convert non-Compose state into Compose state
 
 `derivedStateOf`: convert one or multiple state objects into another state
@@ -398,7 +402,7 @@ Drawables are used for everything else, only 1 resolution will be used
 
 `rememberUpdatedState`: reference a value in an effect that shouldn't restart if the value changes, usually used with `LaunchedEffect` or `DisposableEffect`
 
-`rememberCoroutineScope`: obtain a composition-aware scope to launch a coroutine outside a composable
+`Saver`: describes how the object of original class can be simplified and converted into something which is `Saveable`
 
 ## Dependency Injection
 
