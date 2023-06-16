@@ -909,7 +909,17 @@ Kotlin Coroutines: enables writing in synchronous way, while the code actually r
 
 `CoroutineExceptionHandler` has no effect on `async()` because the builder catches and represents the exception in the `Deferred` object
 
+`CoroutineExceptionHandler` does not catch exception if it is installed in an inner coroutine
 
+Uncaught exceptions will always be thrown regardless of the kind of `Job` you use.
+
+Remember that a `SupervisorJob` only works as described when it’s part of a scope: either created using `supervisorScope` or `CoroutineScope(SupervisorJob())`. Passing a `SupervisorJob` as a parameter of a coroutine builder will not have the desired effect you would’ve thought for cancellation.
+
+With `launch`, exceptions will be thrown as soon as they happen
+
+When `async` is used as a root coroutine (coroutines that are a direct child of a CoroutineScope instance or supervisorScope), exceptions are not thrown automatically, instead, they’re thrown when you call `.await()`.
+
+Exceptions thrown in a `coroutineScope` builder or in coroutines created by other coroutines won’t be caught in a try/catch!
 
 ### Flow
 
