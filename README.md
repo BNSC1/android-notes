@@ -397,6 +397,7 @@ Drawables are used for everything else, only 1 resolution will be used
 `remember`: retain the state across recompositions
 
 `rememberSaveable`: on top of what `remember` does, it also utilizes `Bundle savedInstanceState` to retain the state across configuration changes
+- However, it requires the data type to be storable by `Bundle` e.g. primitives, strings or `Parcelable`. If not, it is required to have saver/restorer functions. `ViewModel` is preferred over `rememberSaveable`
 
 `produceState`: convert non-Compose state into Compose state
 
