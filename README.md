@@ -394,6 +394,10 @@ Drawables are used for everything else, only 1 resolution will be used
 
 ### State:
 
+`remember`: retain the state across recompositions
+
+`rememberSaveable`: on top of what `remember` does, it also utilizes `Bundle savedInstanceState` to retain the state across configuration changes
+
 `produceState`: convert non-Compose state into Compose state
 
 `derivedStateOf`: calculate one or multiple state objects into another state
