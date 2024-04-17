@@ -656,6 +656,10 @@ Multiple APKs: allows developers to create different APKs for the same applicati
 
 Android App Bundle: If an AAB is uploaded to Google Play, it will provide optimized APK for respective device automatically
 
+Dalvik: runtime on JIT(Just In Time) compilation, initially it only compiles part of the bytecode, it compiles more when a part is needed, every time an app starts up, it does the compilation again, inducing decreased battery life and performance, later replaced by ART.
+
+ART: "Android Runtime" runtime on AOT(Ahead Of Time) compilation, it compiles the whole app on installation and stores the code on the disk. Performance and battery issues are solved while occupying more disk space and taking longer to boot and install the app.
+
 DEX: "Dalvik Executable" is a file format used by the Android operating system to execute compiled code. The DEX format is optimized for Android's virtual machine, the Dalvik Virtual Machine (DVM), which is designed to run on resource-limited devices such as smartphones and tablets.
 
 Android runtime: the DEX file is loaded into memory and executed by either the Dalvik or ART runtime environment. The runtime environment translates the DEX bytecode into machine code that can be executed by the device's processor.
