@@ -934,6 +934,8 @@ Exceptions thrown in a `coroutineScope` builder or in coroutines created by othe
 
 ### Flow
 
+A flow consists of 3 components: flow builder, operator, collector
+
 cold flow: only starts emitting values when it is subscribed, values are not shared among other subscribers either
 
 hot flow: starts emitting values no matter if it is subscribed or not, values are shared among subscribers
@@ -960,7 +962,7 @@ Why use Flow (over Rx)?: has multiplatform support, suspending, enforced to be i
 
 - `awaitClose()`: unregister the callback listener when the Flow is closed
 
-Flow functions:
+Flow operators:
 
 - `transform()`: can emit arbitrary values many times
 
