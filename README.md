@@ -660,6 +660,8 @@ Dalvik: runtime on JIT(Just In Time) compilation, initially it only compiles par
 
 ART: "Android Runtime" runtime on AOT(Ahead Of Time) compilation, it compiles the whole app on installation and stores the code on the disk. Performance and battery issues are solved while occupying more disk space and taking longer to boot and install the app.
 
+ART optimizing profiles: Google collects this usage pattern data to create a code profile, with the profile, ART will compile only the most frequently used part of the code on installation, so the initial run will be faster.
+
 DEX: "Dalvik Executable" is a file format used by the Android operating system to execute compiled code. The DEX format is optimized for Android's virtual machine, the Dalvik Virtual Machine (DVM), which is designed to run on resource-limited devices such as smartphones and tablets.
 
 Android runtime: the DEX file is loaded into memory and executed by either the Dalvik or ART runtime environment. The runtime environment translates the DEX bytecode into machine code that can be executed by the device's processor.
