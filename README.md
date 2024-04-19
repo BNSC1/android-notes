@@ -970,6 +970,10 @@ Flow builders:
 
 - `channelFlow{}`: creates a Flow with the elements emitted using `send()` provided by the builder itself
 
+- `MutableSharedFlow`
+
+- `MutableStateFlow`
+
 Flow intermediate operators:
 
 Functions that are applied to the upstream flow or flows and return a downstream flow where further operators can be applied to.
