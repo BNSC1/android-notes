@@ -1001,6 +1001,12 @@ Flow operators:
 - `debounce()`: emission is ignored until defined time elapsed
 
 - `retry()`: handles exception by retrying until the retry limit is reached, then it will pass the exception to downstream
+ 
+- `flowOn()`: specifies what `Dispatcher` the Flow should be run on
+    - `Dispatcher`s: helps decide which thread should a task run on
+        - `Default`: for CPU-intensive tasks
+        - `IO`: for network or disk tasks
+        - `Main`: for UI tasks
 
 ### String
 
