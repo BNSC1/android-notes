@@ -968,7 +968,7 @@ Flow builders:
 
 - `asFlow()`: turns a type into a Flow
 
-- `channelFlow{}`: creates a Flow with the elements using send provided by the builder itself
+- `channelFlow{}`: creates a Flow with the elements emitted using `send()` provided by the builder itself
 
 Flow operators:
 
