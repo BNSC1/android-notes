@@ -970,7 +970,9 @@ Flow builders:
 
 - `channelFlow{}`: creates a Flow with the elements emitted using `send()` provided by the builder itself
 
-Flow operators:
+Flow intermediate operators:
+
+Functions that are applied to the upstream flow or flows and return a downstream flow where further operators can be applied to.
 
 - `transform()`: can emit arbitrary values many times
 
@@ -978,15 +980,9 @@ Flow operators:
 
 - `conflate()`: skip the emission if the collector can't process it in time
 
-- `collectLatest()`: when the original flow emits a new value then the action block for the previous value is canceled
-
 - `buffer()`: buffer the emission so the collector can process all while the source doesn't need to wait for the collector
 
 - `take()`: cancel the execution of the flow when the corresponding limit is reached
-
-- `reduce()`: Accumulates value starting with the first element and applying the operation to the current accumulator value and each element. Throws NoSuchElementException if the flow was empty.
-
-- `fold()`: Accumulates value starting with initial value and applying operation current accumulator value and each element. Returns initial value if the collection was empty, can change the result type
 
 - `zip()`: combines the corresponding values of two flows
 
@@ -1007,6 +1003,20 @@ Flow operators:
         - `Default`: for CPU-intensive tasks
         - `IO`: for network or disk tasks
         - `Main`: for UI tasks
+
+ Flow terminal operators:
+
+ Applied to the upstream flow and trigger execution of all operations
+
+ - `collect()`: accepts the given collector and emits values into it
+
+ - `collectLatest()`: when the original flow emits a new value then the action block for the previous value is canceled
+
+ - `fold()`: accumulates value starting with initial value and applying operation current accumulator value and each element. Returns initial value if the collection was empty, can change the result type
+
+ - `reduce()`: accumulates value starting with the first element and applying the operation to the current accumulator value and each element. Throws `NoSuchElementException` if the flow was empty.
+
+ - `launchIn()`: launches the collection of the given flow in the scope.  It is a shorthand for `scope.launch { flow.collect() }`
 
 ### String
 
