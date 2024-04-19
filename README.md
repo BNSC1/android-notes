@@ -952,15 +952,23 @@ Why use Flow (over Rx)?: has multiplatform support, suspending, enforced to be i
 
 `StateFlow` vs `SharedFlow`: Data rendered by the `StateFlow` (Text Composable) gets preserved after rotation. On the other hand, when using `SharedFlow`, the `Toast` does not get shown again after screen rotation. `StateFlow` supports `StateFlow.value`, but does not collect repeated values, does not support replaying beyond the latest value, and requires an initial value.
 
-`callbackFlow`: turns a callback listener into a Flow
+Flow builders:
 
-- `trySend()`: posts callback data to Flow, will drop data not collected if the next data is sent
+- `callbackFlow {}`: turns a callback listener into a Flow
 
-- `send()`: similiar to `trySend()` but is a suspend function
+    - `trySend()`: posts callback data to Flow, will drop data not collected if the next data is sent
 
-- `trySendBlocking()`: will block the newest emission until the collector has collected all previous emissions
+    - `send()`: similiar to `trySend()` but is a suspend function
 
-- `awaitClose()`: unregister the callback listener when the Flow is closed
+    - `trySendBlocking()`: will block the newest emission until the collector has collected all previous emissions
+
+    - `awaitClose()`: unregister the callback listener when the Flow is closed
+ 
+- `flowOf()`: turns a set of objects into a Flow
+
+- `asFlow()`: turns a type into a Flow
+
+- `channelFlow{}`: creates a Flow with the elements using send provided by the builder itself
 
 Flow operators:
 
