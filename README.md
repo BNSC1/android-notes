@@ -1002,7 +1002,7 @@ Functions that are applied to the upstream flow or flows and return a downstream
 
 - `retry()`: handles exception by retrying until the retry limit is reached, then it will pass the exception to downstream
 
-- `filter()`: filter out unmatched emission
+- `filter()`: filters out unmatched emission
 
 - `distinctUntilChanged()`: identical emission is dismissed
  
@@ -1011,6 +1011,8 @@ Functions that are applied to the upstream flow or flows and return a downstream
         - `Default`: for CPU-intensive tasks
         - `IO`: for network or disk tasks
         - `Main`: for UI tasks
+     
+- `catch()`: handles exceptions
 
  Flow terminal operators:
 
