@@ -1001,6 +1001,10 @@ Functions that are applied to the upstream flow or flows and return a downstream
 - `debounce()`: emission is ignored until defined time elapsed
 
 - `retry()`: handles exception by retrying until the retry limit is reached, then it will pass the exception to downstream
+
+- `filter()`: filter out unmatched emission
+
+- `distinctUntilChanged()`: identical emission is dismissed
  
 - `flowOn()`: specifies what `Dispatcher` the Flow should be run on
     - `Dispatcher`s: helps decide which thread should a task run on
