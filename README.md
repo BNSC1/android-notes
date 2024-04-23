@@ -777,7 +777,7 @@ Overloading: methods have the same name but different signatures e.g. parameters
 
 - `componentN()`: corresponding to the properties in their order of declaration. The compiler only uses the properties defined inside the primary constructor for the automatically generated functions
 
-`sealed class`: forces to add remaining branches while the referenced sealed class object is in when()
+`sealed class/interface`: forces to add remaining branches while the type-checked `sealed class/interface` object is in `when()`
 
 `let()`: inputs object as a receiver, object as a parameter in lambda, returns the lambda result
 
