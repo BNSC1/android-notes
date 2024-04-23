@@ -773,7 +773,7 @@ Overloading: methods have the same name but different signatures e.g. parameters
 
 - `equals()`/`hashCode()`: only evaluates properties from the primary constructor
 
-- `copy()`
+- `copy()`: only copies properties from the primary constructor
 
 - `componentN()`: corresponding to the properties in their order of declaration. The compiler only uses the properties defined inside the primary constructor for the automatically generated functions
 
