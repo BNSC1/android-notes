@@ -771,7 +771,7 @@ Overloading: methods have the same name but different signatures e.g. parameters
 
 - `toString()`
 
-- `equals()`/`hashCode()`
+- `equals()`/`hashCode()`: only evaluates properties from the primary constructor
 
 - `copy()`
 
