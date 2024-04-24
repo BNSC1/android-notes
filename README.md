@@ -546,7 +546,7 @@ Lifecycle of `viewLifeCycleOwner`: `onViewCreated()`~`onDestroyView()`
 
 Lifecycle of `LifecycleOwner` of the Fragment: `onCreate()`~`onDestroy()`
 
-- `onAttach()`: the fragment is added to a `FragmentManager`
+- `onAttach()`: called when the fragment is added to a `FragmentManager`, and is always called before any lifecycle changes
 
 - `onCreate()`: initialize a fragment, when the fragment is added to a `FragmentManager`
 
@@ -570,7 +570,7 @@ Lifecycle of `LifecycleOwner` of the Fragment: `onCreate()`~`onDestroy()`
 
 - `onDestroy()`: when the fragment is no longer used, when the fragment is removed from a `FragmentManager`
 
-- `onDetach()`: the fragment is removed from a `FragmentManager`
+- `onDetach()`: called when the fragment is removed from a `FragmentManager`, and is always called after any lifecycle changes
 
 View:
 
