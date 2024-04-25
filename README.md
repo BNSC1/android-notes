@@ -307,6 +307,8 @@ Why use `RecyclerView` over `ListView`?: `ListView` creates as many views as dat
 
 `SnapHelper`: a helper class that helps to implement snapping behavior in a `RecyclerView`. Snapping behavior refers to the behavior of automatically scrolling the RecyclerView to the nearest view when the user stops scrolling.
 
+`RecycledViewPool`: can be used to share view pool between `RecyclerView`s, optimizing their performance
+
 The flow on the view happens is when we want to tap the button:
 `Activity` -> `dispatchTouchEvent` (LinearLayout) -> `dispatchTouchEvent` (Button) -> `onTouchEvent` (Button). 
 
