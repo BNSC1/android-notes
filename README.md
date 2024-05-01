@@ -761,9 +761,9 @@ Auto/UnBoxing: auto/unwrapping primitive types to wrapper type
 
 `Triple<T1,T2,T3>`: pair 3 data
 
-`Array` in Kotlin: has fixed size, has better performance and is mutable so values can be changed
+`Array` in Kotlin: has fixed size, has better performance and is mutable so values can be changed, it is invariant
 
-`List` in Kotlin: immutable by default unless created as `MutableList`, has to add/remove method to manipulate list size, has better scalability
+`List` in Kotlin: immutable by default unless created as `MutableList`, has to add/remove method to manipulate list size, has better scalability, it is covariant
 
 label in Kotlin: used to declare which loop to break/continue in a for loop
 
