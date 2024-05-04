@@ -83,7 +83,6 @@ Ways to communicate between two fragments:
 - Shared ViewModel: create a shared ViewModel between two fragments that belong to the same activity. The ViewModel can hold the shared data or state and both fragments can access and modify it as needed.
 - Callback interface: define a callback interface in the first fragment and implement it in the parent activity. Then, you can pass the instance of the implemented interface to the second fragment and call the interface method from the second fragment to communicate back to the first fragment.
 - `FragmentManager`: The `FragmentManager` can be used to find a fragment by its tag or ID and then call a public method on that fragment to communicate with it.
-- `setTargetFragment()` and `onActivityResult()`: You can set the target fragment in the first fragment and start the second fragment with `startActivityForResult()`. Then, in the second fragment, you can set the result and call getActivity().onActivityResult() to pass the result back to the first fragment.
 - shared data storage: You can use a shared data storage, such as a database or a shared preferences file, to store the data that needs to be shared between the two fragments. Both fragments can access the data storage and read or write the data as needed.
 
 - Fragment replace: removes existing fragment and adds new fragment
