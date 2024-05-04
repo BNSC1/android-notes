@@ -528,7 +528,7 @@ In which situations Activity can be in the `onPause()` state and never calls `on
 
 `setContentView()` is called in `onCreate()` because `onCreate()` is only called once
 
-`onSavedInstanceState()`: store data before pausing the activity
+`onSavedInstanceState()`: store data before stopping the activity
 
 `onRestoreInstanceState()`: recover the saved state of an activity when the activity is recreated after the destruction
 
