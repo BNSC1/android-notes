@@ -903,7 +903,9 @@ Kotlin Coroutines: enables writing in synchronous way, while the code actually r
 
 `CoroutineBuilders`: helps create coroutines, can be called in non-suspending functions
 
-`Coroutines.async()`: used when one needs to wait for the result, will block the main thread
+`Coroutines.async()`: used when one needs to wait for the result, creates a `Deferred<T>` object.
+
+`Deferred.await()`: waits to get the result
 
 `Coroutines.launch()`: is set and forget.
 
