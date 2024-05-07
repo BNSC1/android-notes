@@ -207,16 +207,14 @@ MVP:
 Presenter: the view calls the view-model via the contract interface, the view-model passes update event to the view via the contract interface
 
 - +easy unit-testing
-
-- +view/presenter reusable
-
-- +observer not required
+  
+- +better scalability
 
 - -additional view interface
 
 - -coupled view/presenter
 
-- =view has reference to presenter
+- =view has reference to presenter, presenter has reference to view
 
 MVVM:
 
