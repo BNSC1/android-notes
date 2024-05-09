@@ -272,9 +272,9 @@ REST API: there are clients and a server, clients send HTTP request in methods G
 
 JSON: widely used in web development and data exchange between systems. JSON is human-readable and easy to parse and generate using built-in libraries in most programming languages. JSON does not require a schema. However, JSON is less efficient in terms of performance and memory usage than binary formats like FlatBuffers, and requires parsing and validation at runtime.
 
-Protocol Buffers: aka protobuf. It uses a schema to define the data structure, which is written in a language-independent format called the Protocol Buffer Language. The schema is used to generate code in various programming languages to read and write the data in a strongly-typed, type-safe manner. Protocol Buffers supports many data types, including integers, floats, doubles, strings, booleans, and enums.
+Protocol Buffers: aka protobuf. It uses a schema to define the data structure, which is written in a language-independent format called the Protocol Buffer Language. The schema is used to generate code in various programming languages to read and write the data in a strongly-typed, type-safe manner. Protocol Buffers supports many data types, including integers, floats, doubles, strings, booleans, and enums. It suffers from the same drawback as protobuf due to lack of human-readable representation.
 
-FlatBuffers: uses a schema to define the data structure and generates code to read and write the data in a strongly-typed, type-safe manner. FlatBuffers does not require parsing or validation at runtime, which makes it faster and more memory efficient than text-based formats like JSON.
+FlatBuffers: Similar to protobuf. However you don’t need to deserialize the whole data in the latter before accessing an object. It is faster and more memory efficient than protobuf.
 
 ## View
 
