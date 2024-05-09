@@ -315,10 +315,6 @@ Working with touch control:
 - Now, everything depends on `onInterceptTouchEvent()` and its return value. Based on its return value the `dispatchTouchEvent` is dependent, that if returns true the dispatcher is canceled, and if it returns false then the dispatching of the touch event keeps going on until its used. It follows Chain of Responsibility pattern.
 - And `onTouchEvent()` if the return value is true, then it means the touch is handled and if it returns false then it means the touch is not handled.
 
-If a `ViewGroup`'s `onInterceptTouchEvent()` returns false, the touch event is passed down to its child `View`s for further handling.
-
-Merge layout: a type of layout file in Android that allows you to combine multiple `View`s into a single `View` without introducing an extra level of hierarchy. Merge layouts can be used to improve performance by reducing the depth of the `View` hierarchy.
-
 Tips on how to optimize the depth of the `View` tree:
 - Use Flat View Hierarchies: Whenever possible, try to use a flat view hierarchy by using fewer nesting levels. This can be achieved by using layout containers such as `ConstraintLayout` or `RelativeLayout`, which allow you to position `Views` relative to each other without the need for nested layouts.
 - Use `ViewStub`: `ViewStub` is a lightweight `View` that is used to lazily inflate Views. Instead of including `View`s directly in the layout, you can use `ViewStub` to include `View`s only when they are needed. This can help reduce the depth of the `View` tree and improve performance.
