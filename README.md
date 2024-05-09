@@ -272,7 +272,7 @@ JSON: widely used in web development and data exchange between systems. JSON is 
 
 Protocol Buffers: aka protobuf. It uses a schema to define the data structure, which is written in a language-independent format called the Protocol Buffer Language. The schema is used to generate code in various programming languages to read and write the data in a strongly-typed, type-safe manner. Protocol Buffers supports many data types, including integers, floats, doubles, strings, booleans, and enums. It suffers from the same drawback as protobuf due to lack of human-readable representation.
 
-FlatBuffers: Similar to protobuf. However you don’t need to deserialize the whole data in the latter before accessing an object. It is faster and more memory efficient than protobuf.
+FlatBuffers: Similar to protobuf. However you don’t need to deserialize the whole data in FlatBuffers before accessing an object. It is faster and more memory efficient than protobuf.
 
 ## View
 
