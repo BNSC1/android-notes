@@ -798,6 +798,8 @@ Static methods cannot be overridden
 
 `String.intern()` returns a canonical representation of a String object from the string pool
 
+thread-safety: Different threads can access the same resources without erroneous behavior or unpredictable results
+
 Advantages of making an object final:
 - ensuring it is never changed after initialization
 - making it thread safe
@@ -872,6 +874,8 @@ ArrayMap: an Android-specific data structure that implements the Map interface a
 SparseArray an Android-specific data structure that implements the Map interface and uses arrays to store key-value pairs, but is specialized for integer keys. SparseArray is optimized for memory usage and is more memory efficient than HashMap and ArrayMap for data sets with integer keys. SparseArray provides constant-time performance for most operations, but may be slower than HashMap and ArrayMap for data sets with non-integer keys.
 
 In Kotlin, the primary constructor is called first, then fields or `init{}` depending on their code positions, then the secondary constructor.
+
+
 
 ### Coroutines
 
