@@ -877,6 +877,12 @@ In Kotlin, the primary constructor is called first, then fields or `init{}` depe
 
 Kotlin Coroutines: enables writing in synchronous way, while the code actually runs asynchronously and concurrently
 
+Coroutine vs Thread: 
+- Coroutines are relatively cheap to create
+- Multiple threads can access and modify shared state. This can lead to race conditions and other concurrency issues, which must be carefully managed through the use of synchronization primitives such as locks and atomic variables. Coroutines, on the other hand, are based on a message-passing model, where communication between coroutines is done through explicit channels rather than shared state. This can make it easier to write correct and concurrent code.
+- Threads can only be paused or resumed through the use of blocking calls or explicit synchronization, which can make it difficult to write non-blocking code. Coroutines, on the other hand, can be easily suspended and resumed using special keywords and functions, allowing you to write asynchronous code in a more straightforward and readable way.
+- Threads tend to be more expensive and slower than coroutines because they involve kernel-level operations and require more resources. Coroutines are lightweight and efficient and can be used to perform many concurrent operations with minimal overhead.
+
 `CoroutineScope`: the lifecycle of this coroutine
 
 `Job`: its main responsibility is to manage coroutine cancellation.
