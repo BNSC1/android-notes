@@ -11,6 +11,8 @@ Activity: entry point for user interaction e.g. track what is on the screen
 
 Foreground `Service`: it is visible to the user as a notification, and unlike a normal `Service`, it cannot be stopped by Android even if low on resources, requires the `START_STICKY` flag to restart if terminated
 
+By default, a `Service` is run on the main thread
+
 `IntentService`: a subclass of `Service` that provides a simple way to perform long-running tasks in the background. An `IntentService` runs in a separate thread, so it does not block the main UI thread, and it automatically stops itself when it has completed its work.
 
 `BroadcastReceiver`: a component that allows your app to receive and respond to system-wide broadcast events or custom broadcast events that are sent from other apps or from the system itself.
