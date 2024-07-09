@@ -877,7 +877,8 @@ SparseArray an Android-specific data structure that implements the Map interface
 
 In Kotlin, the primary constructor is called first, then fields or `init{}` depending on their code positions, then the secondary constructor.
 
-
+a `String` created by its constructor will create a distinct object irrelevant to the one in the string pool, so no matter what value the new string has, comparison by reference will return false when compared with another string with the exact same value
+e.g. `"string" == new String("string")` returns false
 
 ### Coroutines
 
