@@ -1167,9 +1167,11 @@ Parallel: a task is broken into multiple subtasks processed by multiple processo
 
 Why floating numbers are inaccurate: because they can only hold this many bits after floating points, they will never accurately present an irrational number.
 
-# DB
+# Database
 
 An organized collection of data that is stored electronically
+
+Normalization: an act of structuring a rational database with normal forms in order to reduce data redundancy and improve data integrity
 
 `||` is a string concatenate operator. Think of it as `+` in Java String.
 
