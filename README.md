@@ -308,6 +308,8 @@ Why use `RecyclerView` over `ListView`?: `ListView` creates as many views as dat
 
 - `ViewHolder`: draws for individual items
 
+If the `RecyclerView` is expected to have the same height and width regardless of how many items it holds, `RecyclerView.setHasFixedSize(true)` may improve performance by not calling `requestLayout()` every time an item is added/removed/changed
+
 `SnapHelper`: a helper class that helps to implement snapping behavior in a `RecyclerView`. Snapping behavior refers to the behavior of automatically scrolling the RecyclerView to the nearest view when the user stops scrolling.
 
 `RecycledViewPool`: can be used to share view pool between `RecyclerView`s, optimizing their performance
