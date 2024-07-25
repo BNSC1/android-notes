@@ -153,8 +153,12 @@ Bundle class is commonly used for passing data between activities, fragments, an
 `Spannable`: an interface that allows you to apply one or more formatting or styling "spans" to a portion of a text. A Spannable is similar to a SpannableString, but it is more general in that it can be applied to any class that implements the CharSequence interface.
 
 `SharedPreferences` is a mechanism for storing key-value pairs of data in a persistent storage
+- `getSharedPreferences()`: Use this if there are multiple shared preference files and are identified by name, which you specify with the first parameter. Can be called from any `Context` in your app
+- `getPreferences()`: Use this from an Activity if you need to use only one shared preference file for the activity. Because this retrieves a default shared preference file that belongs to the activity, you don't need to supply a name.
 - `commit()` writes the changes synchronously to the disk, blocking the calling thread until the write operation has completed. Means it can cause delay to UI thread.
 - `apply()` writes the changes asynchronously to the disk, without blocking the calling thread. Means that the apply operation is a non-blocking operation and does not cause any delay in the UI thread. The changes made with `apply()` are also guaranteed to be eventually persisted to disk, even if the app is killed before the operation is completed.
+
+`DataStore`: similar to `SharedPreferences`, stores data in key-value pair, but is built upon Kotlin coroutines and Flow
 
 9-patch image: a special type of image file format in Android that allows you to define how the image should be stretched or tiled when displayed in different screen sizes or resolutions. A nine-patch image consists of a regular Bitmap with an additional 1-pixel border around it, which defines how the image should be stretched or tiled.
 
