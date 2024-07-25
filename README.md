@@ -300,6 +300,8 @@ Why use `RecyclerView` over `ListView`?: `ListView` creates as many views as dat
 
 - `Adapter`: binding for a dataset, aware of where each item is located in the dataset
 
+    - `setHasStableIds(true)`: even if we call `notifyDataSetChanged()`, it does not have to handle the complete re-ordering of the whole adapter because it can find if the item at a position is the same as before and do less work.
+
 - `LayoutManager`: positions items within the RecyclerView
 
 - `ItemAnimator`: defaults to DefaultItemAnimator
