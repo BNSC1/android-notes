@@ -1180,7 +1180,7 @@ Lock: used to limit access to a resource in an environment where there are many 
 
 Thread safety: different threads can access the same resources without erroneous behavior or unpredictable results
 
-Deadlock: two or more threads aren’t able to make any progress because the resource required are held by either of them, while not being able to aquire it
+Deadlock: two or more threads aren’t able to make any progress because the resource required are held by either of them, while not being able to acquire it
 
 - How to avoid:
 
