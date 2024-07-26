@@ -1162,7 +1162,7 @@ Multi-tasking: do one more thing at a time
 
 Multi-programming: load multiple programs into the system
 
-Multi-threading: fast switching between threads
+Multi-threading: simultaneous execution of two or more parts of a program
 
 Synchronous: only process 1 task at a time
 
