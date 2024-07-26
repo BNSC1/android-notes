@@ -808,8 +808,6 @@ Static methods cannot be overridden
 
 `String.intern()` returns a canonical representation of a String object from the string pool
 
-thread-safety: Different threads can access the same resources without erroneous behavior or unpredictable results
-
 Advantages of making an object final:
 - ensuring it is never changed after initialization
 - making it thread safe
@@ -929,8 +927,6 @@ Coroutine vs Thread:
 `GlobalScope`: cannot be canceled
 
 `Mutex().withLock()`: protect all modifications of the shared state with a critical section that is never executed concurrently
-
-`Semaphore`: a synchronization mechanism that allows a fixed number of threads or coroutines to access a shared resource simultaneously. It maintains a count of the number of permits available, and each thread or coroutine that wants to access the resource has to acquire a permit before proceeding. The permits are released back to the semaphore when the resource is no longer needed, allowing other threads or coroutines to acquire them.
 
 `CoroutineExceptionHandler` only catches unhandled exception, that is, if the block already handles the exception, it will not be triggered
 
@@ -1070,7 +1066,6 @@ Why is `String` immutable?:
 
 - `map()` is used to transform a list based on certain conditions
 
-
 # Version Control
 
 `git fetch`: brings my local copy of the remote repository up to date.
@@ -1153,6 +1148,14 @@ Process: executables running in the system
 
 Thread: processes divided into multiple work units
 
+Why floating numbers are inaccurate: because they can only hold this many bits after floating points, they will never accurately present an irrational number.
+
+# Concurrency
+
+Concurrency: multiple tasks are dealt with by 1 processor
+
+Semaphore: a synchronization mechanism that allows a fixed number of threads or coroutines to access a shared resource simultaneously. It maintains a count of the number of permits available, and each thread or coroutine that wants to access the resource has to acquire a permit before proceeding. The permits are released back to the semaphore when the resource is no longer needed, allowing other threads or coroutines to acquire them.
+
 Coroutine: switch to another thread while a processing thread is locking
 
 Multi-tasking: do one more thing at a time
@@ -1165,11 +1168,25 @@ Synchronous: only process 1 task at a time
 
 Asynchronous: can have more than 1 task ongoing at a time
 
-Concurrent: 2 or more tasks are processed by 1 processor
-
 Parallel: a task is broken into multiple subtasks processed by multiple processors
 
-Why floating numbers are inaccurate: because they can only hold this many bits after floating points, they will never accurately present an irrational number.
+Context Switching: divide CPU time between processes
+
+Thread pools: handles manual creation of threads, once a worker thread finishes a task, it is returned to the pool
+
+Lock: used to limit access to a resource in an environment where there are many threads of execution e.g. mutex
+
+- Mutex: mutual exclusion. It is used to guard shared data such as a linked-list, an array or any simple primitive type. It allows only a single thread to access a resource
+
+Thread safety: different threads can access the same resources without erroneous behavior or unpredictable results
+
+Deadlock: two or more threads aren’t able to make any progress because the resource required are held by either of them, while not being able to aquire it
+
+Race conditions: threads access shared resources or program variables that might be worked on by other threads at the same time causing the application data to be inconsistent
+
+Starvation: a thread never gets CPU time or access to shared resources because other “greedy” threads hog the resources
+
+Livelock: 2 threads keep taking actions in response to the other thread instead of making any progress
 
 # Database
 
