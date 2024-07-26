@@ -1182,11 +1182,26 @@ Thread safety: different threads can access the same resources without erroneous
 
 Deadlock: two or more threads aren’t able to make any progress because the resource required are held by either of them, while not being able to aquire it
 
-Race conditions: threads access shared resources or program variables that might be worked on by other threads at the same time causing the application data to be inconsistent
+- How to avoid:
+
+    - Avoid giving locks to multiple threads if you already have given to one, which is the main reason why deadlock happens
+
+    - Minimize lock usage
+
+Race condition: threads access shared resources or program variables that might be worked on by other threads at the same time causing the application data to be inconsistent
+
+- How to avoid: use proper thread synchronization within critical sections by using techniques like locks, atomic variables, and message passing
 
 Starvation: a thread never gets CPU time or access to shared resources because other “greedy” threads hog the resources
 
+- How to avoid:
+
+    - introduce a “fair” lock by favoring access to the longest waiting thread e.g. ReentrantLock, mutex
+    - in multithread condition, use semaphore
+
 Livelock: 2 threads keep taking actions in response to the other thread instead of making any progress
+
+- How to avoid: use ReentrantLock as a way to determine which thread has been waiting longer so that you can assign it a lock. As a best practice, don’t block locks; if a thread can’t acquire a lock, it should release previously acquired locks to try again later.
 
 # Database
 
