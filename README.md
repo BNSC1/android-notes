@@ -886,6 +886,8 @@ In Kotlin, the primary constructor is called first, then fields or `init{}` depe
 a `String` created by its constructor will create a distinct object irrelevant to the one in the string pool, so no matter what value the new string has, comparison by reference will return false when compared with another string with the exact same value
 e.g. `"string" == new String("string")` returns false
 
+`hashCode()`: generates hash code for hash table data structures e.g. HashMap, HashSet, it should be overridden as well if `equals()` is overridden, and should meet the contract where if `a.equals(b)` is true, then `a.hashCode() == b.hashCode()` should also be true.
+
 ### Coroutines
 
 Kotlin Coroutines: enables writing in synchronous way, while the code actually runs asynchronously and concurrently
