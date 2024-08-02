@@ -950,6 +950,8 @@ If you need to use a library that forces you to use callback functions, turn the
 
 If you need to use a library that requires the use of blocking functions, you should never call blocking functions on regular suspending functions. In most cases, when we implement repositories in applications, it is enough to use `Dispatchers.IO`.
 
+When we fetch a single value from an API, it is best to use a suspend function; however, when we set up a WebSocket and listen for messages, we should use `Flow` instead. To create such a flow (if the library we use does not support returning one), we should use `callbackFlow` (or `channelFlow`). Remember to end your builder with `awaitClose`
+
 ### Flow
 
 A flow consists of 3 components: flow builder, operator, collector
