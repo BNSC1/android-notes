@@ -946,6 +946,10 @@ When `async` is used as a root coroutine (coroutines that are a direct child of 
 
 Exceptions thrown in a `coroutineScope` builder or in coroutines created by other coroutines won’t be caught in a try/catch!
 
+If you need to use a library that forces you to use callback functions, turn them into suspending functions using the `suspendCancellableCoroutine`. When a callback is called, the coroutine should be resumed using the `resume` method on `Continuation`. If this callback function is cancellable, it should be cancelled inside the `invokeOnCancellation` lambda expression.
+
+If you need to use a library that requires the use of blocking functions, you should never call blocking functions on regular suspending functions. In most cases, when we implement repositories in applications, it is enough to use `Dispatchers.IO`.
+
 ### Flow
 
 A flow consists of 3 components: flow builder, operator, collector
@@ -1023,7 +1027,7 @@ Functions that are applied to the upstream flow or flows and return a downstream
 - `flowOn()`: specifies what `Dispatcher` the Flow should be run on
     - `Dispatcher`s: helps decide which thread should a task run on
         - `Default`: for CPU-intensive tasks
-        - `IO`: for network or disk tasks
+        - `IO`: for network or disk tasks, it is limited to 64 threads, use `limitedParallelism` to make a new dispatcher with an independent limit
         - `Main`: for UI tasks
      
 - `catch()`: handles exceptions
