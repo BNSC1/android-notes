@@ -314,6 +314,8 @@ If the `RecyclerView` is expected to have the same height and width regardless o
 
 `RecycledViewPool`: can be used to share view pool between `RecyclerView`s, optimizing their performance
 
+`ConcatAdapter`: combine multiple adapters which display sequentially in a single RecyclerView
+
 The flow on the view happens is when we want to tap the button:
 `Activity` -> `dispatchTouchEvent` (LinearLayout) -> `dispatchTouchEvent` (Button) -> `onTouchEvent` (Button). 
 
