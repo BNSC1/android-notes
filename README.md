@@ -501,7 +501,21 @@ Running blocking tasks in UI thread should be avoided as it will cause UI lag or
 
 `android:process` in `AndroidManifest` allows an app running in multiple processes
 
-`RecycledViewPool` may improve performance of a nested `RecyclerView` if `RecyclerView`s items are using similar layout
+Optimizing `RecyclerView`:
+
+- `RecycledViewPool` may improve performance of a nested `RecyclerView` if `RecyclerView`s items are using similar layout
+
+- Never Ever use `Recyclerview` with `NestedScrollView` because `Recyclerview` will stop recycling views and will instead rendering all views rather than only rendering visible ones
+
+- Using `ListAdapter` with `DiffUtil` will completely remove `notifyDatasetChanged` which will avoid re-calculating & re-rendering all your views
+
+- Avoid heavy calculations & nesting views in `Recyclerview` items
+
+- If the `RecyclerView` is nested, `parentRecyclerView.setItemViewCacheSize(cacheSize)` to tweak shared cache size
+
+- If the `RecyclerView` is nested, `childRecyclerView.setItemPrefetchEnabled(true)` and `LayoutManager.collectInitialPrefetchPositions()` can set how many inner items should be prefetched
+
+
 
 ## Lifecycle
 
