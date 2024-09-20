@@ -238,11 +238,15 @@ ViewModel: the view calls the view-model directly, the view-model passes update 
 
 MVI:
 
-- Model: presents the current state of the application, which is immutable. The Model is updated by processing the Intents and producing new versions of the Model.
+Based on MVVM, introduces ViewState and Intent to achieve unidirectional data flow
+
+- (View)Model: presents the current state of the application, which is immutable. The Model is updated by processing the Intents and producing new versions of the Model.
 
 - View: responsible for rendering the UI based on the current Model state. The View is passive and receives updates whenever the Model changes.
 
 - Intent: presents user actions which is passed to the Model layer from the View layer.
+
+- ViewState: passed from the Model layer to the View layer to signal UI update, through observables
 
 Why use clean architecture?: modularize the different functions of an application so that each component is separate and can be updated and tested independently
 
