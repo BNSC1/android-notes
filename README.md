@@ -1152,6 +1152,8 @@ Fake object: lightweight and usually frameworkless implementation of the real-wo
 
 Mock object: object with preconfigured behaviors that is expected to be run defined times in a test
 
+Stub object: object with preconfigured behaviors, but does not verify like a mock object does
+
 Robolectric: a testing framework for Android that allows developers to write unit tests that run on the JVM instead of on a device or emulator. The framework provides a simulated Android environment that allows developers to test their code in a controlled and isolated environment, enabling faster and more efficient testing.
 
 Espresso: a testing framework for Android that allows writeing automated tests for UI testing. Espresso is designed to help developers test the user interface of their applications on real Android devices or emulators.
