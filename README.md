@@ -401,11 +401,11 @@ Drawables are used for everything else, only 1 resolution will be used
 
 ### Side effects:
 
-`LaunchedEffect`: run suspend functions in the scope of a composable, only when its key changed
+`SideEffect`: a Composable function that allows us to execute a side effect when its parent Composable is recomposed
+
+`LaunchedEffect`: a Composable function that executes a side effect in a separate coroutine scope
 
 `DisposableEffect`: effects that require cleanup
-
-`SideEffect`: a Composable function that allows us to execute a side effect when its parent Composable is recomposed
 
 `rememberCoroutineScope`: obtain a composition-aware scope to launch a coroutine outside a composable
 
