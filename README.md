@@ -405,7 +405,7 @@ Drawables are used for everything else, only 1 resolution will be used
 
 `LaunchedEffect`: a Composable function that executes a side effect in a separate coroutine scope, with key(s) to identify the LaunchedEffect instance and prevent it from being recomposed unnecessarily
 
-`DisposableEffect`: effects that require cleanup
+`DisposableEffect`: a Composable function that executes a side effect when its parent Composable is first rendered, and disposes of the effect when the Composable is removed from the UI hierarchy.
 
 `rememberCoroutineScope`: obtain a composition-aware scope to launch a coroutine outside a composable
 
