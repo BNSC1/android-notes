@@ -405,7 +405,7 @@ Drawables are used for everything else, only 1 resolution will be used
 
 `DisposableEffect`: effects that require cleanup
 
-`SideEffect`: publish Compose state to non-compose code
+`SideEffect`: a Composable function that allows us to execute a side effect when its parent Composable is recomposed
 
 `rememberCoroutineScope`: obtain a composition-aware scope to launch a coroutine outside a composable
 
