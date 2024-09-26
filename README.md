@@ -403,7 +403,7 @@ Drawables are used for everything else, only 1 resolution will be used
 
 `SideEffect`: a Composable function that allows us to execute a side effect when its parent Composable is recomposed
 
-`LaunchedEffect`: a Composable function that executes a side effect in a separate coroutine scope
+`LaunchedEffect`: a Composable function that executes a side effect in a separate coroutine scope, with key(s) to identify the LaunchedEffect instance and prevent it from being recomposed unnecessarily
 
 `DisposableEffect`: effects that require cleanup
 
