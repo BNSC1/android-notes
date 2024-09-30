@@ -399,6 +399,22 @@ Drawables are used for everything else, only 1 resolution will be used
 
 ## Compose
 
+### Versus Android View:
+
+Declarative vs Imperative: Jetpack Compose is declarative, which means you define what the UI should look like for a state. While Android View is imperative, meaning you manipulate the UI are made by explicitly calling methods on UI elements.
+
+Definition and State: In Compose, UI definition and state management are tightly integrated. State changes automatically trigger UI updates. While in Android View, developers must update the UI themselves.
+
+Performance and Efficiency: Jetpack Compose is designed to minimize unnecessary recomposition. While Android View requires careful management to avoid performance pitfalls.
+
+Component Reusability and Customization: Composables are highly reusable by combining existing composables without the need of extending a View class like Android View.
+
+Code Structure: Jetpack Compose lives within composable functions in Kotlin. Android View requires separate XML layout files for UI definition, seperating UI from logics.
+
+Development Speed: Jetpack Compose requires less code and can be faster to develop, especially for dynamic UIs. While Android View is verbose and require more boilerplate code.
+
+Learning Curve: Jetpack Compose is the newer approach and has fewer resources compared to more mature Android View.
+
 ### Side effects:
 
 `SideEffect`: a Composable function that allows us to execute a side effect when its parent Composable is recomposed
