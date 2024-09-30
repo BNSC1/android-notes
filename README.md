@@ -411,6 +411,8 @@ Drawables are used for everything else, only 1 resolution will be used
 
 ### State:
 
+State hoisting: a pattern that moves UI state up the composable hierarchy to the lowest common ancestor
+
 `remember`: retain the state across recompositions
 
 `rememberSaveable`: on top of what `remember` does, it also utilizes `Bundle savedInstanceState` to retain the state across configuration changes
