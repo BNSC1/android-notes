@@ -463,9 +463,15 @@ Why use Dagger?:
 
 - easier scope management
 
-What Are Components In Dagger?: They are a way of telling Dagger 2 what dependencies should be bundled together and made available to a given instance so they can be used.
+What Are Components In Dagger?: declared in `@InstallIn` to tell Dagger when the dependency will become (un)available in the app
 
-What Are Modules In Dagger?: installed to that component to allow binding to be accessed
+What Are Scopes In Dagger?: by default, every dependenies is unscoped in a component, which means the component will create a new instance for each dependency, scoping the dependencies means creating one instance of the dependency and passing it to all the classes requiring it within the scope. However, scoping means an instance occupy memory for a longer period of time and should be used sparingly
+
+What Are Modules In Dagger?: sources of the required class instances for classes which depend on them
+
+- `@Provides`: declare how the module resolves the needed instances
+
+- `@Binds`: used with abstract classes and interfaces as a return type of abstract function, which takes parameter in a required instance
 
 `activityViewModels()`: injects viewmodel shared in the activity
 
