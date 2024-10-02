@@ -1340,3 +1340,16 @@ Microservices: a collection of small, independent services that communicate with
 - Scalability and resilience: Microservices can be scaled horizontally to handle increased traffic or workload, and can be designed to be fault-tolerant and resilient to failures. This can help ensure that the system remains available and responsive even in the face of hardware or software failures.
 - Technology diversity: Microservices can be developed and deployed using different technologies and programming languages, which can be better suited to the specific needs and requirements of each service. This can allow for more innovation and experimentation in software development.
 - Team autonomy: Microservices can be developed and maintained by small, cross-functional teams that have ownership and autonomy over their specific services. This can enable faster and more efficient decision-making, and can help avoid dependencies and bottlenecks in the development process.
+
+
+# Project Management
+
+Agile: a project management approach that involves breaking the project into phases and emphasizes continuous collaboration and improvement. Teams follow a cycle of planning, executing, and evaluating.
+
+Agile has benefits of:
+- Clients can voice in the development process
+- Improved product quality
+- More adaptable to changes
+- More predictable
+- Spot obstacles early to reduce risks
+- Better communication
