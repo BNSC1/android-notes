@@ -976,9 +976,9 @@ Coroutine vs Thread:
 
 `Coroutines.launch()`: is set and forget.
 
-`withContext()`: switch thread to another in the coroutine scope, the parent will wait for the completion of this code block
+`withContext()`: switch thread to another in the coroutine scope, suspends its parent
 
-`supervisorScope`/`supervisorJob`: if 1 thread fails it will continue to run.
+`supervisorScope`/`supervisorJob`: if 1 thread fails it will continue to run, suspends its parent.
 
 `GlobalScope`: cannot be canceled
 
