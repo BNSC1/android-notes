@@ -452,6 +452,8 @@ Why use dependency injection?:
 - easier to reuse code
 - easier collab
 - separate of concern
+ 
+Dependency graph is built on compile-time for Dagger/Hilt, while for Koin, it's on runtime
 
 How DI works?: the service implements the interface, the client depends on the interface, the injector creates the service and injects it into the client
 
